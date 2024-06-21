@@ -50,7 +50,11 @@ public class Entity : PooledObject
 
     public void GainExp(int amount)
     {
-        baseStats.currentExp += amount;
-        if(baseStats.expLevelCurve.Evaluate(baseStats.currentExp))
+        stats.currentExp += amount;
+        if(stats.expLevelCurve.Evaluate(baseStats.currentExp) > stats.level)
+        {
+            stats.level++;
+            // ON LEVEL UP STUFF
+        }
     }
 }

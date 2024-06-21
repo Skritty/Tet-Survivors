@@ -260,7 +260,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 10
   maximumPoolSize: 20
-  poolID: 22864
+  poolID: 22998
   prefab: {fileID: 0}
   OnGet:
     m_PersistentCalls:
@@ -762,7 +762,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 10
   maximumPoolSize: 20
-  poolID: 0
+  poolID: 23044
   prefab: {fileID: 0}
   OnGet:
     m_PersistentCalls:
@@ -770,7 +770,7 @@ MonoBehaviour:
   OnRelease:
     m_PersistentCalls:
       m_Calls: []
-  baseStats: {fileID: 0}
+  baseStats: {fileID: 11400000, guid: 6476535137b29d44ea693b3b27d05941, type: 2}
   stats: {fileID: 0}
   currentTick: 0
   abilities: []
@@ -821,7 +821,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 10
   maximumPoolSize: 20
-  poolID: 22900
+  poolID: 23050
   prefab: {fileID: 0}
   OnGet:
     m_PersistentCalls:
