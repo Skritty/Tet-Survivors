@@ -14,6 +14,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allegience: 1
   facing: {x: 0, y: -1}
+  expDrop: 0
+  level: 0
+  currentExp: 0
+  expLevelCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.0009965482
+      outSlope: 0.0009965482
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 50107.395
+      value: 49.934433
+      inSlope: -0.00093818473
+      outSlope: -0.00093818473
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.16487288
+    - serializedVersion: 3
+      time: 100000
+      value: 100
+      inSlope: 0.0010034667
+      outSlope: 0.0010034667
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   maxHealth: 100
   currentHealth: 100
   baseDamage: 10
