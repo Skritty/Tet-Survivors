@@ -5,11 +5,11 @@ using UnityEngine;
 public class ExpOrb : Entity
 {
     public static List<ExpOrb> expOrbs = new List<ExpOrb>();
-    public int expGranted;
-    public void Spawn(int expValue)
+    public void Spawn(int expValue, Vector3 position)
     {
         ExpOrb orb = RequestObject().GetComponent<ExpOrb>();
-        orb.expGranted = expValue;
+        orb.transform.position = position;
+        orb.stats.expDropped = expValue;
         expOrbs.Add(orb);
     }
 

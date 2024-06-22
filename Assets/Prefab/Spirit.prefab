@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 5738960084197922200}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5233302, y: 1.730826, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -48,7 +48,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 10
   maximumPoolSize: 20
-  poolID: 32890
+  poolID: 23160
   prefab: {fileID: 5738960084197922200}
   OnGet:
     m_PersistentCalls:
@@ -58,7 +58,7 @@ MonoBehaviour:
       m_Calls: []
   baseStats: {fileID: 11400000, guid: 312d5dc9d8c20784ea3ab7d7174a1c2e, type: 2}
   stats: {fileID: 11400000, guid: c87c047eddbdeba44a12ebd962cb2309, type: 2}
-  currentTick: 104244
+  currentTick: 0
   abilities:
   - {fileID: 11400000, guid: a84b1d2ad5895a34bae3fc420dd254c7, type: 2}
 --- !u!1 &7000727813242396407

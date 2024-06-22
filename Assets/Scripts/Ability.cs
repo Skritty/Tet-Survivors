@@ -11,11 +11,14 @@ public abstract class Ability : ScriptableObject
     [Header("Ability Info")]
     public string abilityName;
     public bool enabled = true;
+    public bool activateOnSpawn;
     public int cooldownTicks;
+    public Ability replaceAbility;
 
     public virtual void Initialize(Entity self) { }
     public virtual void CheckCooldownTrigger(int tick, Entity self)
     {
+        if (self.IsStunned) return;
         if (cooldownTicks == 0 || tick % cooldownTicks == 0) CooldownActivation(self);
     }
     public virtual void CooldownActivation(Entity self) { }

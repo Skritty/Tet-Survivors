@@ -131,7 +131,7 @@ Transform:
   m_GameObject: {fileID: 8920718006239068618}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5267408, y: 1.7202301, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -153,7 +153,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 10
   maximumPoolSize: 20
-  poolID: 32926
+  poolID: 27480
   prefab: {fileID: 8920718006239068618}
   OnGet:
     m_PersistentCalls:
@@ -161,9 +161,30 @@ MonoBehaviour:
   OnRelease:
     m_PersistentCalls:
       m_Calls: []
-  baseStats: {fileID: 11400000, guid: 4230e8e840d1b25458a9bc5228972737, type: 2}
-  stats: {fileID: 11400000, guid: 4230e8e840d1b25458a9bc5228972737, type: 2}
-  currentTick: 104631
+  baseStats: {fileID: 11400000, guid: f61b6ace91629094b990a40bf353045f, type: 2}
+  stats:
+    allegience: 0
+    expDropped: 0
+    expLevelCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    baseDamage: 0
+    baseMovementSpeed: 1
+    level: 0
+    currentExp: 0
+    currentHealth: 0
+    facing: {x: 0, y: 0}
+    maxHealth: 0
+    damageMultiplier: 0
+    movementScaling: 0
+    areaScaling: 0
+    expAttractScaling: 0
+  currentTick: 0
   abilities:
+  - {fileID: 11400000, guid: 01e73b30753b3cd4ea4be573da326619, type: 2}
   - {fileID: 11400000, guid: 9895f6d85c3d1544e93c213380162344, type: 2}
   - {fileID: 11400000, guid: 84243deb8e6259d40854783fc296be62, type: 2}
+  - {fileID: 11400000, guid: 6d3fad9e5554b324babd55e34bfd2d1b, type: 2}

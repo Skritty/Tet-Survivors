@@ -17,6 +17,6 @@ public class InputMovement : Ability
         {
             self.stats.facing = dir.normalized;
         }
-        self.transform.position += dir.normalized * self.stats.movementScaling * Time.fixedDeltaTime;
+        self.transform.position += dir.normalized * self.stats.baseMovementSpeed * self.stats.movementScaling * self.SlowMulti * Time.fixedDeltaTime + self.Knockback;
     }
 }

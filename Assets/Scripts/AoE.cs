@@ -10,12 +10,13 @@ public class AoE
     [Serializable]
     public class AoEStage
     {
-        public float damageScale;
+        public DamageInstance damage;
         public int tickDuration;
         public int timesRepeated;
         public float radius;
         [Range(0, 360f)]
         public float angleDegrees;
+        public float selfSlowMultiDuringStage = 1;
         // Particle effect
 
         public void CollisionCheckAll(Entity origin, Vector2 forward)
@@ -28,20 +29,20 @@ public class AoE
 
         public void CollisionCheckSingle(Entity origin, Vector2 forward, Entity target)
         {
-            if(origin.stats.allegience == EntityType.Neutral 
-                || (origin.stats.allegience == EntityType.Player && target.stats.allegience == EntityType.Player)
-                || (origin.stats.allegience != EntityType.Player && target.stats.allegience != EntityType.Player))
+            if (!target.isActiveAndEnabled) return;
+            if(!damage.entitiesDamaged.HasFlag(target.stats.allegience))
             {
                 return;
             }
 
             Vector2 toTarget = target.transform.position - origin.transform.position;
             if (toTarget.magnitude > radius) return;
-            Debug.Log(Mathf.Acos(Vector2.Dot(toTarget, forward) / (toTarget.magnitude * forward.magnitude)) * Mathf.Rad2Deg);
             if (toTarget.magnitude == 0 || angleDegrees == 360 || Mathf.Acos(Vector2.Dot(toTarget, forward) / (toTarget.magnitude * forward.magnitude)) * Mathf.Rad2Deg <= angleDegrees / 2f)
             {
                 HitFX();
-                target.DamageTaken(damageScale * origin.stats.baseDamage * origin.stats.damageMultiplier);
+                DamageInstance damageInstance = damage.CreateCopy();
+                damageInstance.damageScale *= origin.stats.baseDamage * origin.stats.damageMultiplier;
+                target.DamageTaken(origin, damageInstance);
             }
         }
 
@@ -75,8 +76,9 @@ public class AoE
             {
                 for (int repeat = 0; repeat < stage.timesRepeated + 1; repeat++)
                 {
+                    origin.stats.buffs.Add(new Buff(BuffType.Slow, stage.tickDuration, stage.selfSlowMultiDuringStage, origin));
                     stage.StartFX();
-                    if (stage.damageScale != 0)
+                    if (stage.damage.damageScale != 0 || stage.damage.slowTickDuration > 0 || stage.damage.stunTickDuration > 0 || stage.damage.knockbackTickDuration > 0)
                     {
                         if (target == null)
                         {

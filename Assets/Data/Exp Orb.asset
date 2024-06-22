@@ -12,21 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60705a2515119fc439b58c1e66fe3e2f, type: 3}
   m_Name: Exp Orb
   m_EditorClassIdentifier: 
-  allegience: 0
-  facing: {x: 0, y: 0}
-  expDrop: 0
-  level: 0
-  currentExp: 0
-  expLevelCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  maxHealth: 0
-  currentHealth: 0
-  baseDamage: 0
-  damageMultiplier: 0
-  movementScaling: 0
-  areaScaling: 0
-  expAttractScaling: 0
+  stats:
+    allegience: 1
+    facing: {x: 0, y: 0}
+    expDrop: 0
+    level: 0
+    currentExp: 0
+    expLevelCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    maxHealth: 0
+    currentHealth: 0
+    baseDamage: 0
+    damageMultiplier: 0
+    movementScaling: 0
+    areaScaling: 0
+    expAttractScaling: 0
