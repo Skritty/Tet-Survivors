@@ -52,22 +52,26 @@ public class Stats
     
     [Header("Modifiable Stats")]
     public float maxHealth;
+    public int cooldownReduction;
     public float damageMultiplier = 1;
     public float movementScaling = 1;
     public float areaScaling = 1;
     public float expAttractScaling = 1;
+    public EntityType overrideDamageAllegience;
 
     public Stats CreateCopy(Stats existing)
     {
         Stats stats = (Stats) MemberwiseClone();
         if (existing != null)
         {
+            stats.allegience = existing.allegience;
             stats.level = existing.level;
             stats.currentExp = existing.currentExp;
             stats.currentHealth = existing.currentHealth;
             stats.facing = existing.facing;
             stats.buffs = existing.buffs;
             stats.activationTicks = existing.activationTicks;
+            stats.overrideDamageAllegience = existing.overrideDamageAllegience;
         }
         else
         {

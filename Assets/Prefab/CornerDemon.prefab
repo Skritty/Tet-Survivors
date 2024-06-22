@@ -48,7 +48,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 10
   maximumPoolSize: 20
-  poolID: 26794
+  poolID: 23194
   prefab: {fileID: 1323297479520635401}
   OnGet:
     m_PersistentCalls:
@@ -79,7 +79,6 @@ MonoBehaviour:
     expAttractScaling: 1
   currentTick: 0
   abilities:
-  - {fileID: 11400000, guid: a84b1d2ad5895a34bae3fc420dd254c7, type: 2}
   - {fileID: 11400000, guid: 858358ac180b47d4587955ed275c1a6b, type: 2}
 --- !u!1 &5398405823955366904
 GameObject:

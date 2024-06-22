@@ -15,7 +15,10 @@ public abstract class Ability : ScriptableObject
     public int cooldownTicks;
     public Ability replaceAbility;
 
-    public virtual void Initialize(Entity self) { }
+    public virtual void Initialize(Entity self) 
+    { 
+        if(activateOnSpawn) CooldownActivation(self);
+    }
     public virtual void CheckCooldownTrigger(int tick, Entity self)
     {
         if (self.IsStunned) return;

@@ -30,13 +30,21 @@ public class AoE
         public void CollisionCheckSingle(Entity origin, Vector2 forward, Entity target)
         {
             if (!target.isActiveAndEnabled) return;
-            if(!damage.entitiesDamaged.HasFlag(target.stats.allegience))
+            if(!(origin.stats.overrideDamageAllegience == EntityType.None))
+            {
+                if (!origin.stats.overrideDamageAllegience.HasFlag(target.stats.allegience))
+                {
+                    return;
+                }
+            }
+            else if (!damage.entitiesDamaged.HasFlag(target.stats.allegience))
             {
                 return;
             }
 
+
             Vector2 toTarget = target.transform.position - origin.transform.position;
-            if (toTarget.magnitude > radius) return;
+            if (toTarget.magnitude > radius * origin.stats.areaScaling) return;
             if (toTarget.magnitude == 0 || angleDegrees == 360 || Mathf.Acos(Vector2.Dot(toTarget, forward) / (toTarget.magnitude * forward.magnitude)) * Mathf.Rad2Deg <= angleDegrees / 2f)
             {
                 HitFX();

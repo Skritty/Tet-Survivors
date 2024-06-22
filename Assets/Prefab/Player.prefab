@@ -153,7 +153,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 10
   maximumPoolSize: 20
-  poolID: 27480
+  poolID: 25200
   prefab: {fileID: 8920718006239068618}
   OnGet:
     m_PersistentCalls:
@@ -161,6 +161,7 @@ MonoBehaviour:
   OnRelease:
     m_PersistentCalls:
       m_Calls: []
+  owner: {fileID: 0}
   baseStats: {fileID: 11400000, guid: f61b6ace91629094b990a40bf353045f, type: 2}
   stats:
     allegience: 0
@@ -178,13 +179,15 @@ MonoBehaviour:
     currentHealth: 0
     facing: {x: 0, y: 0}
     maxHealth: 0
+    cooldownReduction: 0
     damageMultiplier: 0
     movementScaling: 0
     areaScaling: 0
     expAttractScaling: 0
+    overrideDamageAllegience: 0
   currentTick: 0
   abilities:
   - {fileID: 11400000, guid: 01e73b30753b3cd4ea4be573da326619, type: 2}
   - {fileID: 11400000, guid: 9895f6d85c3d1544e93c213380162344, type: 2}
   - {fileID: 11400000, guid: 84243deb8e6259d40854783fc296be62, type: 2}
-  - {fileID: 11400000, guid: 6d3fad9e5554b324babd55e34bfd2d1b, type: 2}
+  - {fileID: 11400000, guid: 3fb68e844eaa70449a218ab23253978f, type: 2}

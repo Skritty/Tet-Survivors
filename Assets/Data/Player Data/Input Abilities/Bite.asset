@@ -20,32 +20,4 @@ MonoBehaviour:
   cooldownTicks: 30
   replaceAbility: {fileID: 0}
   key: 122
-  aoe:
-    stages:
-    - damage:
-        entitiesDamaged: 0
-        damageScale: 0
-        knockbackPower: 0
-        knockbackTickDuration: 0
-        stunTickDuration: 0
-        slowMulti: 0
-        slowTickDuration: 0
-      tickDuration: 20
-      timesRepeated: 0
-      radius: 2.8
-      angleDegrees: 90
-      selfSlowMultiDuringStage: 0.8
-    - damage:
-        entitiesDamaged: 28
-        damageScale: 1
-        knockbackPower: 0.38
-        knockbackTickDuration: 6
-        stunTickDuration: 0
-        slowMulti: 0.8
-        slowTickDuration: 10
-      tickDuration: 10
-      timesRepeated: 0
-      radius: 2.8
-      angleDegrees: 90
-      selfSlowMultiDuringStage: 0.5
-    playing: 0
+  toTrigger: {fileID: 11400000, guid: ebd01a3cd67244443afb688e64fc4bcd, type: 2}

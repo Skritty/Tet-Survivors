@@ -11,6 +11,7 @@ public class PlayerProximityTriggeredAttack : GenericAoE
     public override void Initialize(Entity self)
     {
         self.stats.activationTicks.Add(this, 0);
+        base.Initialize(self);
     }
 
     public override void CheckCooldownTrigger(int tick, Entity self)

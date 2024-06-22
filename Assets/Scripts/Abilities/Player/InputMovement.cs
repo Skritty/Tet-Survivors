@@ -13,10 +13,12 @@ public class InputMovement : Ability
         if (Input.GetKey(down)) dir += Vector3.down;
         if (Input.GetKey(left)) dir += Vector3.left;
         if (Input.GetKey(right)) dir += Vector3.right;
-        if(dir.sqrMagnitude != 0)
+
+        dir = dir.normalized * self.stats.baseMovementSpeed * self.stats.movementScaling * self.SlowMulti * Time.fixedDeltaTime + self.Knockback;
+        if (dir.sqrMagnitude != 0)
         {
             self.stats.facing = dir.normalized;
         }
-        self.transform.position += dir.normalized * self.stats.baseMovementSpeed * self.stats.movementScaling * self.SlowMulti * Time.fixedDeltaTime + self.Knockback;
+        self.transform.position += dir;
     }
 }

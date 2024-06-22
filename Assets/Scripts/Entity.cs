@@ -6,12 +6,17 @@ using UnityEngine;
 
 public class Entity : PooledObject
 {
+    public Entity owner; // For if this is a proxy
     public StatsSO baseStats;
     //[HideInInspector]
     public Stats stats;
     //[HideInInspector]
     public int currentTick;
     public List<Ability> abilities;
+
+    public Action OnDeath;
+    public Action OnHit;
+    public Action WhenHit;
 
     public bool IsStunned
     {
@@ -62,6 +67,11 @@ public class Entity : PooledObject
 
     private void Awake()
     {
+        Initialize();
+    }
+
+    public virtual void Initialize()
+    {
         stats = baseStats.FetchStats();
         // Initialization
         foreach (Ability ability in abilities)
@@ -73,19 +83,39 @@ public class Entity : PooledObject
     public void FixedUpdate()
     {
         currentTick++;
+        CalculateStats();
+        AbilityTriggers();
+        BuffDecrement();
+    }
 
+    protected virtual void CalculateStats()
+    {
         stats = baseStats.FetchStats(stats);
+
+        if(owner != null && owner != this)
+        {
+            stats.cooldownReduction = owner.stats.cooldownReduction;
+            stats.damageMultiplier = owner.stats.damageMultiplier;
+            stats.movementScaling = owner.stats.movementScaling;
+            stats.areaScaling = owner.stats.areaScaling;
+        }
 
         foreach (Ability ability in abilities)
         {
             ability.CalculateStats(stats);
         }
+    }
 
-        foreach (Ability ability in abilities) 
+    protected virtual void AbilityTriggers()
+    {
+        foreach (Ability ability in abilities)
         {
             ability.CheckCooldownTrigger(currentTick, this);
         }
+    }
 
+    protected virtual void BuffDecrement()
+    {
         foreach (Buff buff in stats.buffs.ToArray())
         {
             buff.ticksRemaining--;
