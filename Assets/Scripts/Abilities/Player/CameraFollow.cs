@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+[CreateAssetMenu(menuName = "Abilities/Player/CameraFollow")]
+public class CameraFollow : Ability
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void CooldownActivation(Entity self)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Vector3 pos = Camera.main.transform.position;
+        pos.x = self.transform.position.x;
+        pos.y = self.transform.position.y;
+        Camera.main.transform.position = pos;
     }
 }

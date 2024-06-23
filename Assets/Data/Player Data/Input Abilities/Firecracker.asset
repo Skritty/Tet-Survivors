@@ -19,5 +19,5 @@ MonoBehaviour:
   activateOnSpawn: 0
   cooldownTicks: 60
   replaceAbility: {fileID: 0}
-  key: 0
+  key: 120
   toTrigger: {fileID: 11400000, guid: 74cc005d744a45d41beed9fa720253dc, type: 2}

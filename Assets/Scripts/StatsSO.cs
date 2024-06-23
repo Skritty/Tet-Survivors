@@ -69,6 +69,7 @@ public class Stats
             stats.allegience = existing.allegience;
             stats.level = existing.level;
             stats.currentExp = existing.currentExp;
+            stats.expDropped = existing.expDropped;
             stats.currentHealth = existing.currentHealth;
             stats.facing = existing.facing;
             stats.buffs = existing.buffs;

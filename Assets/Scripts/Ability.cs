@@ -8,6 +8,9 @@ public abstract class Ability : ScriptableObject
     public bool removeFromTreeOnUnlock = true;
     public List<Ability> unlockedOnObtain = new List<Ability>();
 
+    [Header("Effects")]
+    public PooledObject VFX;
+
     [Header("Ability Info")]
     public string abilityName;
     public bool enabled = true;
@@ -26,4 +29,15 @@ public abstract class Ability : ScriptableObject
     }
     public virtual void CooldownActivation(Entity self) { }
     public virtual void CalculateStats(Entity self, Stats stats) { }
+
+    /*public void PlayEffects()
+    {
+        ParticleSystem particles = VFX.RequestObject().GetComponent<ParticleSystem>();
+        IEnumerator Play()
+        {
+            particles.Play();
+            for (int i = 0; i < )
+            particles.Stop();
+        }
+    }*/
 }

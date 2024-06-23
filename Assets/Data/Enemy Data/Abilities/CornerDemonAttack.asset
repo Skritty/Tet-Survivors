@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
+  VFX: {fileID: 0}
   abilityName: Corner Demon Attack
   enabled: 1
   activateOnSpawn: 0

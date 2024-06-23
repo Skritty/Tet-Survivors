@@ -47,3 +47,15 @@ MonoBehaviour:
   player: {fileID: 0}
   expOrb: {fileID: 1839415796997460108, guid: 2c25d98eeac4e2841bd6a3442cf6a397, type: 3}
   entities: []
+  spawnRadius: 10
+  waves:
+  - startTick: 0
+    endTick: 3000
+    spawns:
+    - enemy: {fileID: 5460673222613622623, guid: ee7fe3f7e55494d42997e0073c02b93d, type: 3}
+      spawnEveryXFrames: 250
+      count: 0
+    - enemy: {fileID: 7869798815858738168, guid: f9a6ed294c35b374ab245b4a225f8cc6, type: 3}
+      spawnEveryXFrames: 375
+      count: 0
+    active: 0

@@ -171,14 +171,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
-      propertyPath: abilities.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
-      propertyPath: abilities.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 453301514409c83438c86b412e2fe3f8, type: 2}
     - target: {fileID: 8920718006239068618, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
       propertyPath: m_Name
       value: Player

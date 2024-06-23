@@ -203,17 +203,19 @@ public class Entity : PooledObject
             }
         }
     }
+
     public void Die()
     {
-        if(stats.expDropped != 0)
+        if(baseStats.stats.expDropped != 0)
         {
-            GameManager.Instance.expOrb.Spawn(stats.expDropped, transform.position);
+            GameManager.Instance.expOrb.Spawn(baseStats.stats.expDropped, transform.position);
         }
         ReleaseObject();
     }
 
     public void GainExp(int amount)
     {
+        Debug.Log($"Exp gained: {amount}");
         stats.currentExp += amount;
         if(stats.expLevelCurve.Evaluate(stats.currentExp) > stats.level)
         {
