@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public Entity player;
     public AbilityTree abilityTree;
+    public GameObject mainMenu, pauseMenu, gameoverScreen;
     public ExpOrb expOrb;
     public AnimationCurve globalEnemyHealthScalingOverTime;
     public static float enemyHealthMulti => Instance.globalEnemyHealthScalingOverTime.Evaluate(Instance.globalTick);
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 0;
         Instance = this;
     }
 
@@ -67,5 +70,44 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void PauseGame(bool pause)
+    {
+        if (pause)
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1;
+        }
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        foreach(Entity entity in FindObjectsByType(typeof(Entity), FindObjectsInactive.Include, FindObjectsSortMode.None))
+        {
+            entity.currentTick = 0;
+        }
+    }
+
+    public void StartGame()
+    {
+        Time.timeScale = 1;
+        mainMenu.SetActive(false);
+    }
+
+    public void EndGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

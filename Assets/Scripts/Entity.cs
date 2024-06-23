@@ -223,6 +223,7 @@ public class Entity : PooledObject
         {
             GameManager.Instance.expOrb.Spawn(baseStats.stats.expDropped, transform.position);
         }
+        owner = null;
         ReleaseObject();
     }
 
