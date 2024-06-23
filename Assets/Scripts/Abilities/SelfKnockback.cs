@@ -32,5 +32,7 @@ public class SelfKnockback : Ability
         }
 
         self.stats.buffs.Add(new Buff(BuffType.Knockback, KBDuration, KBPower, self, dir.x, dir.y));
+
+        PlayAnimation(self);
     }
 }

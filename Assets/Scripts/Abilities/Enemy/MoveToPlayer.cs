@@ -63,6 +63,7 @@ public class MoveToPlayer : Ability
             dir = Vector3.zero;
         }
         self.transform.position += dir + self.Knockback;
+        PlayAnimation(self);
         /*if ((target.transform.position - self.transform.position).magnitude < keepDistance)
         {
             self.transform.position = target.transform.position + -(target.transform.position - self.transform.position).normalized * keepDistance;

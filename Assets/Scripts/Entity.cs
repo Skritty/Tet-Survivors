@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Entity : PooledObject
 {
+    public Animator animator;
     public Entity owner; // For if this is a proxy
     public StatsSO baseStats;
     //[HideInInspector]
@@ -86,8 +87,8 @@ public class Entity : PooledObject
 
     protected void OnEnable()
     {
-        GameManager.Instance.entities.Add(this);
         Initialize();
+        GameManager.Instance.entities.Add(this);
     }
 
     protected void OnDisable()

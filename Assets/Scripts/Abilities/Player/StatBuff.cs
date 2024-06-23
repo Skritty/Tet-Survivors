@@ -32,5 +32,6 @@ public class StatBuff : Ability
                     break;
             }
         }
+        PlayAnimation(self);
     }
 }

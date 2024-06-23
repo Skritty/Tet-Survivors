@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
-  VFX: {fileID: 0}
   abilityName: Corner Demon Attack
+  abilityDescription: 
   enabled: 1
   activateOnSpawn: 0
-  cooldownTicks: 500
+  animationTrigger: Attack
+  animationTickDuration: 550
+  cooldownTicks: 600
   replaceAbility: {fileID: 0}
   aoe:
     stages:
@@ -35,6 +37,7 @@ MonoBehaviour:
       radius: 3
       angleDegrees: 0
       selfSlowMultiDuringStage: 1
+      VFX: {fileID: 0}
     - damage:
         entitiesDamaged: 2
         damageScale: 0.01
@@ -45,8 +48,9 @@ MonoBehaviour:
         slowTickDuration: 1
       tickDuration: 1
       timesRepeated: 499
-      radius: 3
+      radius: 5
       angleDegrees: 360
       selfSlowMultiDuringStage: 1
-    playing: 0
-  activationDistance: 3
+      VFX: {fileID: 0}
+    playing: 1
+  activationDistance: 5

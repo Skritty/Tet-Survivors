@@ -9,5 +9,6 @@ public class GenericAoE : Ability
     public override void CooldownActivation(Entity self)
     {
         aoe.Trigger(self, self.stats.facing);
+        PlayAnimation(self);
     }
 }

@@ -17,7 +17,9 @@ public class AoE
         [Range(0, 360f)]
         public float angleDegrees;
         public float selfSlowMultiDuringStage = 1;
-        // Particle effect
+        // Particle effects
+        public PooledObject VFX;
+        private PooledObject playingVFX;
 
         public void CollisionCheckAll(Entity origin, Vector2 forward)
         {
@@ -47,7 +49,6 @@ public class AoE
             if (toTarget.magnitude > radius * origin.stats.areaScaling) return;
             if (toTarget.magnitude == 0 || angleDegrees == 360 || Mathf.Acos(Vector2.Dot(toTarget, forward) / (toTarget.magnitude * forward.magnitude)) * Mathf.Rad2Deg <= angleDegrees / 2f)
             {
-                HitFX();
                 DamageInstance damageInstance = damage.CreateCopy();
                 damageInstance.damageScale *= origin.stats.baseDamage * origin.stats.damageMultiplier;
                 target.DamageTaken(origin, damageInstance);
@@ -56,17 +57,20 @@ public class AoE
 
         public void StartFX()
         {
-
+            playingVFX = VFX?.RequestObject().GetComponent<PooledObject>();
+            if (playingVFX)
+            {
+                // Set AoE stuff here
+                //playingVFX?.GetComponent<ParticleSystem>().Play();
+            }
         }
 
         public void EndFX()
         {
-
-        }
-
-        public void HitFX()
-        {
-
+            if (playingVFX)
+            {
+                playingVFX.ReleaseObject();
+            }
         }
     }
 

@@ -29,5 +29,6 @@ public class SpiritMedium : Ability
             charm.stats.overrideDamageAllegience = damages;
             charm.stats.buffs.Add(new Buff(BuffType.DoT, 999999, 0.001f, charm));
         }
+        PlayAnimation(self);
     }
 }

@@ -20,5 +20,7 @@ public class InputMovement : Ability
             self.stats.facing = dir.normalized;
         }
         self.transform.position += dir;
+
+        PlayAnimation(self);
     }
 }
