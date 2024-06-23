@@ -87,6 +87,7 @@ public class Entity : PooledObject
     protected void OnEnable()
     {
         GameManager.Instance.entities.Add(this);
+        Initialize();
     }
 
     protected void OnDisable()
@@ -94,14 +95,11 @@ public class Entity : PooledObject
         GameManager.Instance.entities.Remove(this);
     }
 
-    private void Awake()
-    {
-        Initialize();
-    }
-
     public virtual void Initialize()
     {
         stats = baseStats.FetchStats();
+        CalculateStats();
+        stats.currentHealth = stats.maxHealth;
         // Initialization
         foreach (Ability ability in abilities)
         {
@@ -127,6 +125,11 @@ public class Entity : PooledObject
             stats.damageMultiplier = owner.stats.damageMultiplier;
             stats.movementScaling = owner.stats.movementScaling;
             stats.areaScaling = owner.stats.areaScaling;
+        }
+
+        if (stats.allegience.HasFlag(EntityType.Spirit) || stats.allegience.HasFlag(EntityType.Zombie) || stats.allegience.HasFlag(EntityType.Demon))
+        {
+            stats.maxHealth *= GameManager.enemyHealthMulti;
         }
 
         foreach (Buff buff in stats.buffs)
@@ -172,6 +175,16 @@ public class Entity : PooledObject
                 stats.buffs.Remove(buff);
             }
         }
+    }
+
+    public void AddAbility(Ability ability)
+    {
+        if (abilities.Contains(ability.replaceAbility))
+        {
+            abilities.Remove(ability.replaceAbility);
+        }
+        abilities.Add(ability);
+        ability.Initialize(this);
     }
 
     public void DamageTaken(Entity source, DamageInstance damage)
@@ -221,6 +234,7 @@ public class Entity : PooledObject
         {
             stats.level++;
             // ON LEVEL UP STUFF
+            GameManager.Instance.abilityTree.gameObject.SetActive(true);
         }
     }
 }

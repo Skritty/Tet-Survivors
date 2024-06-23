@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AbilityTree : MonoBehaviour
 {
-    private List<Ability> upgradePool = new List<Ability>();
+    public List<Ability> upgradePool = new List<Ability>();
 
     public List<Ability> RollForAbilities(int count)
     {

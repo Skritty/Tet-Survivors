@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
-  abilityName: 
+  animationTrigger: 
+  VFX: {fileID: 0}
+  abilityName: Enrage
+  abilityDescription: Gain increased damage the more health you are missing.
   enabled: 1
   activateOnSpawn: 0
   cooldownTicks: 0

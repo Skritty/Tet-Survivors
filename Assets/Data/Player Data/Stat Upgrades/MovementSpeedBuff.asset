@@ -14,13 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
-  abilityName: 
+  animationTrigger: 
+  VFX: {fileID: 0}
+  abilityName: Movement Speed Up
+  abilityDescription: Increases movement speed by 20%.
   enabled: 1
   activateOnSpawn: 0
   cooldownTicks: 0
+  replaceAbility: {fileID: 0}
   statsToBuff:
     allegience: 0
-    facing: {x: 0, y: 0}
     expDropped: 0
     expLevelCurve:
       serializedVersion: 2
@@ -29,11 +32,19 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     baseDamage: 0
+    baseMovementSpeed: 1
     level: 0
     currentExp: 0
     currentHealth: 0
+    totalDistanceTraveled: 0
+    facing: {x: 0, y: 0}
+    buffs: []
     maxHealth: 0
+    cooldownReduction: 0
     damageMultiplier: 1
     movementScaling: 1.2
     areaScaling: 1
     expAttractScaling: 1
+    overrideDamageAllegience: 0
+  combineMethod: 0
+  tickDuration: -1

@@ -8,7 +8,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public Entity player;
+    public AbilityTree abilityTree;
     public ExpOrb expOrb;
+    public AnimationCurve globalEnemyHealthScalingOverTime;
+    public static float enemyHealthMulti => Instance.globalEnemyHealthScalingOverTime.Evaluate(Instance.globalTick);
     public List<Entity> entities = new List<Entity>();
     public float spawnRadius;
     public List<Wave> waves = new List<Wave>();

@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
-  abilityName: Spawn Lantern
+  animationTrigger: 
+  VFX: {fileID: 0}
+  abilityName: Lantern
+  abilityDescription: Create a lantern that follows you and deals damage and slows
+    in an area.
   enabled: 1
   activateOnSpawn: 1
   cooldownTicks: 99999999
