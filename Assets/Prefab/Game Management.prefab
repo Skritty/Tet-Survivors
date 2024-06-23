@@ -219,6 +219,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3879602563310359672, guid: 3f3a90ea09c70654fbfc3135237908b6, type: 3}
   m_PrefabInstance: {fileID: 2812886601050617934}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4960988796925850239 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7192697701294066225, guid: 3f3a90ea09c70654fbfc3135237908b6, type: 3}
+  m_PrefabInstance: {fileID: 2812886601050617934}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4361090726652725330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -241,7 +246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4944194388607989092, guid: ad24e3e4c09358140856120d748b1100, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7115025469665622780, guid: ad24e3e4c09358140856120d748b1100, type: 3}
       propertyPath: m_Pivot.x
@@ -331,6 +336,11 @@ PrefabInstance:
 --- !u!224 &6789195264648573614 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7115025469665622780, guid: ad24e3e4c09358140856120d748b1100, type: 3}
+  m_PrefabInstance: {fileID: 4361090726652725330}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8653942048071073078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4944194388607989092, guid: ad24e3e4c09358140856120d748b1100, type: 3}
   m_PrefabInstance: {fileID: 4361090726652725330}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5233241525202011246
@@ -463,9 +473,21 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 8703707428719217332, guid: 789d2d6822f77fa488826daf6e58bbbc, type: 3}
+      propertyPath: mainMenu
+      value: 
+      objectReference: {fileID: 8653942048071073078}
+    - target: {fileID: 8703707428719217332, guid: 789d2d6822f77fa488826daf6e58bbbc, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 4960988796925850239}
+    - target: {fileID: 8703707428719217332, guid: 789d2d6822f77fa488826daf6e58bbbc, type: 3}
       propertyPath: abilityTree
       value: 
       objectReference: {fileID: 1690375003985689158}
+    - target: {fileID: 8703707428719217332, guid: 789d2d6822f77fa488826daf6e58bbbc, type: 3}
+      propertyPath: gameoverScreen
+      value: 
+      objectReference: {fileID: 4881689376852095449}
     - target: {fileID: 8703707428719217332, guid: 789d2d6822f77fa488826daf6e58bbbc, type: 3}
       propertyPath: globalEnemyHealthScalingOverTime.m_Curve.Array.size
       value: 2
@@ -667,5 +689,10 @@ PrefabInstance:
 --- !u!224 &4672999524544820425 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1822353876487307072, guid: c0beba0aadf1d2a4ebf0f9dc166f0f23, type: 3}
+  m_PrefabInstance: {fileID: 6454671453622422409}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4881689376852095449 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1886066935818746448, guid: c0beba0aadf1d2a4ebf0f9dc166f0f23, type: 3}
   m_PrefabInstance: {fileID: 6454671453622422409}
   m_PrefabAsset: {fileID: 0}
