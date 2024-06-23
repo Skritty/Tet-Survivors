@@ -76,3 +76,6 @@ crashlytics-build.properties
 Library/Bee
 Library
 UserSettings/Layouts/default-2022.dwlt
+Logs
+Assembly-CSharp.csproj
+Assembly-CSharp.Player.csproj
