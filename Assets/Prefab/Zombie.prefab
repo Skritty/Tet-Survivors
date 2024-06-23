@@ -152,8 +152,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderers: []
   initialPoolSize: 10
-  maximumPoolSize: 20
-  poolID: 23162
+  maximumPoolSize: 2000
+  poolID: 7864
   prefab: {fileID: 5828070757719542768}
   OnGet:
     m_PersistentCalls:
@@ -161,8 +161,33 @@ MonoBehaviour:
   OnRelease:
     m_PersistentCalls:
       m_Calls: []
+  owner: {fileID: 0}
   baseStats: {fileID: 11400000, guid: aa51d6e59a9db784f92b06b0d270f615, type: 2}
-  stats: {fileID: 11400000, guid: c87c047eddbdeba44a12ebd962cb2309, type: 2}
+  stats:
+    allegience: 0
+    expDropped: 0
+    expLevelCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    baseDamage: 0
+    baseMovementSpeed: 1
+    level: 0
+    currentExp: 0
+    currentHealth: 0
+    totalDistanceTraveled: 0
+    facing: {x: 0, y: 0}
+    buffs: []
+    maxHealth: 0
+    cooldownReduction: 0
+    damageMultiplier: 1
+    movementScaling: 1
+    areaScaling: 1
+    expAttractScaling: 1
+    overrideDamageAllegience: 0
   currentTick: 0
   abilities:
   - {fileID: 11400000, guid: a84b1d2ad5895a34bae3fc420dd254c7, type: 2}
+  - {fileID: 11400000, guid: d8fb7800fb241994fb057d5843dcdfb8, type: 2}

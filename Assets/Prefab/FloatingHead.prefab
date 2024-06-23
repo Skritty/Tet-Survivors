@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderers: []
   initialPoolSize: 10
-  maximumPoolSize: 20
-  poolID: 28018
+  maximumPoolSize: 2000
+  poolID: 23088
   prefab: {fileID: 5667794634927703424}
   OnGet:
     m_PersistentCalls:
@@ -86,6 +86,7 @@ MonoBehaviour:
   abilities:
   - {fileID: 11400000, guid: 18ae87d625343b14d8d850bafddc04a0, type: 2}
   - {fileID: 11400000, guid: 02480ddfd36a795499f5417245c97ddc, type: 2}
+  - {fileID: 11400000, guid: 472673f3f67111f408ca1776c5d3077f, type: 2}
   - {fileID: 11400000, guid: d8fb7800fb241994fb057d5843dcdfb8, type: 2}
 --- !u!1 &8193851125901641335
 GameObject:

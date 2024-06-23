@@ -50,12 +50,72 @@ MonoBehaviour:
   spawnRadius: 10
   waves:
   - startTick: 0
+    endTick: 1500
+    spawns:
+    - enemy: {fileID: 5460673222613622623, guid: ee7fe3f7e55494d42997e0073c02b93d, type: 3}
+      spawnEveryXFrames: 250
+      count: 0
+    - enemy: {fileID: 5460673222613622623, guid: ee7fe3f7e55494d42997e0073c02b93d, type: 3}
+      spawnEveryXFrames: 500
+      count: 0
+    - enemy: {fileID: 5460673222613622623, guid: ee7fe3f7e55494d42997e0073c02b93d, type: 3}
+      spawnEveryXFrames: 500
+      count: 0
+    active: 0
+  - startTick: 1500
     endTick: 3000
     spawns:
     - enemy: {fileID: 5460673222613622623, guid: ee7fe3f7e55494d42997e0073c02b93d, type: 3}
       spawnEveryXFrames: 250
       count: 0
+    - enemy: {fileID: 5460673222613622623, guid: ee7fe3f7e55494d42997e0073c02b93d, type: 3}
+      spawnEveryXFrames: 500
+      count: 0
+    - enemy: {fileID: 5460673222613622623, guid: ee7fe3f7e55494d42997e0073c02b93d, type: 3}
+      spawnEveryXFrames: 500
+      count: 0
+    - enemy: {fileID: 5460673222613622623, guid: ee7fe3f7e55494d42997e0073c02b93d, type: 3}
+      spawnEveryXFrames: 500
+      count: 0
+    active: 0
+  - startTick: 3000
+    endTick: 6000
+    spawns:
+    - enemy: {fileID: 5460673222613622623, guid: ee7fe3f7e55494d42997e0073c02b93d, type: 3}
+      spawnEveryXFrames: 250
+      count: 0
+    - enemy: {fileID: 5460673222613622623, guid: ee7fe3f7e55494d42997e0073c02b93d, type: 3}
+      spawnEveryXFrames: 500
+      count: 0
+    - enemy: {fileID: 5460673222613622623, guid: ee7fe3f7e55494d42997e0073c02b93d, type: 3}
+      spawnEveryXFrames: 500
+      count: 0
+    - enemy: {fileID: 5460673222613622623, guid: ee7fe3f7e55494d42997e0073c02b93d, type: 3}
+      spawnEveryXFrames: 500
+      count: 0
+    - enemy: {fileID: 5460673222613622623, guid: ee7fe3f7e55494d42997e0073c02b93d, type: 3}
+      spawnEveryXFrames: 500
+      count: 0
+    active: 0
+  - startTick: 6000
+    endTick: 9000
+    spawns:
+    - enemy: {fileID: 5460673222613622623, guid: ee7fe3f7e55494d42997e0073c02b93d, type: 3}
+      spawnEveryXFrames: 250
+      count: 0
+    - enemy: {fileID: 5460673222613622623, guid: ee7fe3f7e55494d42997e0073c02b93d, type: 3}
+      spawnEveryXFrames: 500
+      count: 0
+    - enemy: {fileID: 5460673222613622623, guid: ee7fe3f7e55494d42997e0073c02b93d, type: 3}
+      spawnEveryXFrames: 500
+      count: 0
+    - enemy: {fileID: 5460673222613622623, guid: ee7fe3f7e55494d42997e0073c02b93d, type: 3}
+      spawnEveryXFrames: 500
+      count: 0
+    - enemy: {fileID: 5460673222613622623, guid: ee7fe3f7e55494d42997e0073c02b93d, type: 3}
+      spawnEveryXFrames: 500
+      count: 0
     - enemy: {fileID: 7869798815858738168, guid: f9a6ed294c35b374ab245b4a225f8cc6, type: 3}
-      spawnEveryXFrames: 375
+      spawnEveryXFrames: 1000
       count: 0
     active: 0
