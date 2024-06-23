@@ -15,8 +15,10 @@ MonoBehaviour:
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
   abilityName: 
+  abilityDescription: 
   enabled: 1
   activateOnSpawn: 0
+  animationTrigger: Move
   cooldownTicks: 0
   replaceAbility: {fileID: 0}
   keepDistance: 0.2

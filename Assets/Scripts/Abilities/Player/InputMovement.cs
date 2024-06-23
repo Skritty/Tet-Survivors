@@ -18,9 +18,11 @@ public class InputMovement : Ability
         if (dir.sqrMagnitude != 0)
         {
             self.stats.facing = dir.normalized;
+            Vector3 scale = self.animator.transform.localScale;
+            scale.x = Mathf.Abs(scale.x) * -Mathf.Sign(dir.x);
+            self.animator.transform.localScale = scale;
+            PlayAnimation(self);
         }
         self.transform.position += dir;
-
-        PlayAnimation(self);
     }
 }

@@ -14,7 +14,6 @@ public abstract class Ability : ScriptableObject
     public bool enabled = true;
     public bool activateOnSpawn;
     public string animationTrigger;
-    public int animationTickDuration;
     public int cooldownTicks;
     public Ability replaceAbility;
 
@@ -31,19 +30,16 @@ public abstract class Ability : ScriptableObject
     public virtual void CalculateStats(Entity self, Stats stats) { }
     public virtual void PlayAnimation(Entity self)
     {
-        if (animationTrigger != "")
+        if (self.animator && animationTrigger != "")
         {
             self.StartCoroutine(Play());
         }
         
         IEnumerator Play()
         {
-            self.animator?.SetBool(animationTrigger, true);
-
-            for (int i = 0; i < animationTickDuration; i++)
-                yield return new WaitForFixedUpdate();
-
-            self.animator?.SetBool(animationTrigger, false);
+            self.animator.SetBool(animationTrigger, true);
+            yield return new WaitUntil(() => self.animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !self.animator.IsInTransition(0));
+            self.animator.SetBool(animationTrigger, false);
         }
     }
 }

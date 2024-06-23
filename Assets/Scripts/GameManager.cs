@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject mainMenu, pauseMenu, gameoverScreen;
     public ExpOrb expOrb;
     public AnimationCurve globalEnemyHealthScalingOverTime;
-    public static float enemyHealthMulti => 1;// Instance.globalEnemyHealthScalingOverTime.Evaluate(Instance.globalTick);
+    public static float enemyHealthMulti => Instance.globalEnemyHealthScalingOverTime.Evaluate(Instance.globalTick);
     public List<Entity> entities = new List<Entity>();
     public float spawnRadius;
     public List<Wave> waves = new List<Wave>();

@@ -15,10 +15,13 @@ MonoBehaviour:
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
   abilityName: Spirit Move
+  abilityDescription: 
   enabled: 1
   activateOnSpawn: 0
+  animationTrigger: Move
   cooldownTicks: 0
   replaceAbility: {fileID: 0}
   keepDistance: 3
-  alwaysFacePlayer: 0
+  alwaysFacePlayer: 1
+  targetTypeOverride: 0
   followAngle: 0

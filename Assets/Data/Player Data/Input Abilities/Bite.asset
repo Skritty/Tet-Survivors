@@ -15,9 +15,12 @@ MonoBehaviour:
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
   abilityName: Bite
+  abilityDescription: 
   enabled: 1
   activateOnSpawn: 0
-  cooldownTicks: 30
+  animationTrigger: Bite
+  animationTickDuration: 50
+  cooldownTicks: 50
   replaceAbility: {fileID: 0}
   key: 122
   toTrigger: {fileID: 11400000, guid: ebd01a3cd67244443afb688e64fc4bcd, type: 2}

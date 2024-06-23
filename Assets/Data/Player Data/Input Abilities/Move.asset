@@ -15,8 +15,13 @@ MonoBehaviour:
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
   abilityName: Player Move
+  abilityDescription: 
   enabled: 1
+  activateOnSpawn: 0
+  animationTrigger: Walk
+  animationTickDuration: 0
   cooldownTicks: 0
+  replaceAbility: {fileID: 0}
   up: 273
   down: 274
   left: 276

@@ -62,8 +62,16 @@ public class MoveToPlayer : Ability
         {
             dir = Vector3.zero;
         }
+
+        if(dir.magnitude != 0)
+        {
+            Vector3 scale = self.animator.transform.localScale;
+            scale.x = Mathf.Abs(scale.x) * -Mathf.Sign(dir.x);
+            self.animator.transform.localScale = scale;
+            PlayAnimation(self);
+        }
+
         self.transform.position += dir + self.Knockback;
-        PlayAnimation(self);
         /*if ((target.transform.position - self.transform.position).magnitude < keepDistance)
         {
             self.transform.position = target.transform.position + -(target.transform.position - self.transform.position).normalized * keepDistance;

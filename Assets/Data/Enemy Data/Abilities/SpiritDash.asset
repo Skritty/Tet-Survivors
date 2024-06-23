@@ -15,8 +15,10 @@ MonoBehaviour:
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
   abilityName: Spirit Dash
+  abilityDescription: 
   enabled: 1
   activateOnSpawn: 0
+  animationTrigger: Dash
   cooldownTicks: 250
   replaceAbility: {fileID: 0}
   mode: 1

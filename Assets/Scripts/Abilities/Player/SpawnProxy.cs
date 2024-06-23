@@ -16,6 +16,7 @@ public class SpawnProxy : Ability
         }
         Entity entity = proxy.RequestObject().GetComponent<Entity>();
         entity.owner = self;
+        entity.transform.position = self.transform.position;
         PlayAnimation(self);
     }
 }
