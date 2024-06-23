@@ -48,7 +48,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 10
   maximumPoolSize: 20
-  poolID: 25046
+  poolID: 23404
   prefab: {fileID: 2373308955059772829}
   OnGet:
     m_PersistentCalls:
@@ -72,6 +72,7 @@ MonoBehaviour:
     level: 0
     currentExp: 0
     currentHealth: 0
+    totalDistanceTraveled: 0
     facing: {x: 0, y: 0}
     maxHealth: 0
     cooldownReduction: 0
@@ -83,6 +84,7 @@ MonoBehaviour:
   currentTick: 0
   abilities:
   - {fileID: 11400000, guid: 3cf44360175e704448b6af229881b7f6, type: 2}
+  - {fileID: 11400000, guid: 364f75810ea1cb54780749b34efb8f4c, type: 2}
   - {fileID: 11400000, guid: 6b7e426e9b667c44687bb42ef0121b6a, type: 2}
 --- !u!1 &6722985820593086714
 GameObject:

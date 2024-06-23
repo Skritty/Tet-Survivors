@@ -18,4 +18,10 @@ public class ExpOrb : Entity
         expOrbs.Remove(this);
         ReleaseObject();
     }
+
+    private new void Die()
+    {
+        expOrbs.Remove(this);
+        base.Die();
+    }
 }

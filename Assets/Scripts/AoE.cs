@@ -21,7 +21,7 @@ public class AoE
 
         public void CollisionCheckAll(Entity origin, Vector2 forward)
         {
-            foreach (Entity target in GameManager.Instance.entities)
+            foreach (Entity target in GameManager.Instance.entities.ToArray())
             {
                 CollisionCheckSingle(origin, forward, target);
             }

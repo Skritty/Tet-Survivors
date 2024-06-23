@@ -19,4 +19,6 @@ MonoBehaviour:
   activateOnSpawn: 0
   cooldownTicks: 0
   replaceAbility: {fileID: 0}
-  keepDistance: 1
+  keepDistance: 3.4
+  alwaysFacePlayer: 0
+  followAngle: 0

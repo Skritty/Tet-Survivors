@@ -58,12 +58,41 @@ public class Entity : PooledObject
             {
                 if (buff.type == BuffType.Knockback)
                 {
-                    dir += (transform.position - buff.source.transform.position).normalized * buff.intensity;
+                    if(buff.dir == Vector3.zero)
+                        dir += (transform.position - buff.source.transform.position).normalized * buff.intensity;
+                    else
+                        dir += buff.dir.normalized * buff.intensity;
                 }
             }
             return dir;
         }
-    } 
+    }
+
+    public float DoT
+    {
+        get
+        {
+            float damage = 0;
+            foreach (Buff buff in stats.buffs)
+            {
+                if (buff.type == BuffType.DoT)
+                {
+                    damage += buff.intensity;
+                }
+            }
+            return damage;
+        }
+    }
+
+    protected void OnEnable()
+    {
+        GameManager.Instance.entities.Add(this);
+    }
+
+    protected void OnDisable()
+    {
+        GameManager.Instance.entities.Remove(this);
+    }
 
     private void Awake()
     {
@@ -100,9 +129,25 @@ public class Entity : PooledObject
             stats.areaScaling = owner.stats.areaScaling;
         }
 
+        foreach (Buff buff in stats.buffs)
+        {
+            if (buff.type == BuffType.Stat)
+            {
+                switch (buff.combineMethod)
+                {
+                    case StatCombineMethod.Additive:
+                        stats.StatCombineAdditive(buff.statBuff);
+                        break;
+                    case StatCombineMethod.Multiplicative:
+                        stats.StatCombineMultiplicative(buff.statBuff);
+                        break;
+                }
+            }
+        }
+
         foreach (Ability ability in abilities)
         {
-            ability.CalculateStats(stats);
+            ability.CalculateStats(this, stats);
         }
     }
 
@@ -116,6 +161,9 @@ public class Entity : PooledObject
 
     protected virtual void BuffDecrement()
     {
+        // DoT apply
+        stats.currentHealth -= DoT;
+
         foreach (Buff buff in stats.buffs.ToArray())
         {
             buff.ticksRemaining--;

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Stats")]
@@ -43,9 +44,10 @@ public class Stats
     public int currentExp;
     //[HideInInspector]
     public float currentHealth;
+    public float totalDistanceTraveled;
     //[HideInInspector]
     public Vector2 facing;
-    [HideInInspector]
+    //[HideInInspector]
     public List<Buff> buffs;
     //[HideInInspector]
     public Dictionary<Ability, int> activationTicks; // For abilities that don't trigger repeatedly, and buff/debuff durations
@@ -81,22 +83,50 @@ public class Stats
         }
         return stats;
     }
+
+    public void StatCombineAdditive(Stats other)
+    {
+        maxHealth += other.maxHealth;
+        cooldownReduction += other.cooldownReduction;
+        damageMultiplier += other.damageMultiplier - 1;
+        movementScaling += other.movementScaling - 1;
+        areaScaling += other.areaScaling - 1;
+        expAttractScaling += other.expAttractScaling - 1;
+    }
+
+    public void StatCombineMultiplicative(Stats other)
+    {
+        maxHealth += other.maxHealth;
+        cooldownReduction += other.cooldownReduction;
+        damageMultiplier *= other.damageMultiplier;
+        movementScaling *= other.movementScaling;
+        areaScaling *= other.areaScaling;
+        expAttractScaling *= other.expAttractScaling;
+    }
 }
 
-public enum BuffType { Slow, Stun, Knockback }
+public enum BuffType { Slow, Stun, Knockback, DoT, Stat }
+public enum StatCombineMethod { Additive, Multiplicative }
 
+[Serializable]
 public class Buff
 {
     public BuffType type;
+    public Stats statBuff;
+    public StatCombineMethod combineMethod;
     public int ticksRemaining;
     public float intensity;
     public Entity source;
+    public Vector3 dir;
 
-    public Buff(BuffType type, int ticksRemaining, float intensity, Entity source)
+    public Buff(BuffType type, int ticksRemaining, float intensity, Entity source, float x = 0, float y = 0, Stats statBuff = null, StatCombineMethod combineMethod = StatCombineMethod.Additive)
     {
         this.type = type;
         this.ticksRemaining = ticksRemaining;
         this.intensity = intensity;
         this.source = source;
+        this.dir = new Vector3(x, y, 0);
+        this.statBuff = statBuff;
+        this.combineMethod = combineMethod;
     }
 }
