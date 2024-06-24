@@ -14,13 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
-  animationTrigger: 
-  VFX: {fileID: 0}
   abilityName: Turn Undead
-  abilityDescription: Fears all nearby enemies every 20 seconds.
+  abilityDescription: Fears all nearby enemies every 15 seconds.
   enabled: 1
   activateOnSpawn: 0
-  cooldownTicks: 1000
+  animationTrigger: 
+  cooldownTicks: 750
   replaceAbility: {fileID: 0}
   aoe:
     stages:
@@ -37,4 +36,5 @@ MonoBehaviour:
       radius: 3
       angleDegrees: 360
       selfSlowMultiDuringStage: 1
+      VFX: {fileID: 0}
     playing: 0
