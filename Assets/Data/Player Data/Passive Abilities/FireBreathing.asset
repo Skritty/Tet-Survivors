@@ -14,12 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
-  animationTrigger: 
-  VFX: {fileID: 0}
   abilityName: Fire Breathing
   abilityDescription: Spew fire in a cone in front of you every few seconds.
   enabled: 1
   activateOnSpawn: 0
+  animationTrigger: 
   cooldownTicks: 400
   replaceAbility: {fileID: 0}
   aoe:
@@ -36,5 +35,6 @@ MonoBehaviour:
       timesRepeated: 10
       radius: 3
       angleDegrees: 120
-      selfSlowMultiDuringStage: 0
+      selfSlowMultiDuringStage: 1
+      VFX: {fileID: 0}
     playing: 0

@@ -15,9 +15,11 @@ MonoBehaviour:
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
   abilityName: Firecracker
+  abilityDescription: 
   enabled: 1
   activateOnSpawn: 0
-  cooldownTicks: 60
+  animationTrigger: 
+  cooldownTicks: 600
   replaceAbility: {fileID: 0}
   aoe:
     stages:
@@ -34,6 +36,7 @@ MonoBehaviour:
       radius: 4
       angleDegrees: 360
       selfSlowMultiDuringStage: 0
+      VFX: {fileID: 0}
     - damage:
         entitiesDamaged: 28
         damageScale: 0
@@ -47,9 +50,10 @@ MonoBehaviour:
       radius: 6
       angleDegrees: 360
       selfSlowMultiDuringStage: 1
+      VFX: {fileID: 0}
     - damage:
         entitiesDamaged: 4
-        damageScale: 0.15
+        damageScale: 0.3
         knockbackPower: 0
         knockbackTickDuration: 0
         stunTickDuration: 0
@@ -60,4 +64,5 @@ MonoBehaviour:
       radius: 6
       angleDegrees: 360
       selfSlowMultiDuringStage: 1
+      VFX: {fileID: 0}
     playing: 0
