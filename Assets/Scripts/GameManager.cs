@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public RectTransform healthBar, healthBarBack, healthBarMask, healthBarFrame, expBar;
     public Ability firecrackerAbility;
     public Animator firecrackerCooldown;
-    public int healthBarPixelsPerUnit, expBarPixelsPerUnit;
+    public int healthBarPixelsPerUnit, expBarSize;
     private int previousLevelUpExp, nextLevelUpExp;
     public ExpOrb expOrb;
     public AnimationCurve globalEnemyHealthScalingOverTime;
@@ -47,6 +47,10 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
         Instance = this;
+    }
+
+    private void Start()
+    {
         CalculateNextExpRequirement();
     }
 
@@ -64,7 +68,7 @@ public class GameManager : MonoBehaviour
         healthBarBack.sizeDelta = new Vector2(player.stats.maxHealth * healthBarPixelsPerUnit, healthBarBack.sizeDelta.y);
         healthBarMask.sizeDelta = new Vector2(player.stats.maxHealth * healthBarPixelsPerUnit, healthBarMask.sizeDelta.y);
         healthBarFrame.sizeDelta = new Vector2(player.stats.maxHealth * healthBarPixelsPerUnit, healthBarFrame.sizeDelta.y);
-        expBar.sizeDelta = new Vector2(player.stats.currentExp / nextLevelUpExp * expBarPixelsPerUnit, expBar.sizeDelta.y);
+        expBar.sizeDelta = new Vector2(1f * player.stats.currentExp / nextLevelUpExp * expBarSize, expBar.sizeDelta.y);
     }
 
     private void FirecrackerCooldown()
@@ -81,11 +85,11 @@ public class GameManager : MonoBehaviour
     public void CalculateNextExpRequirement()
     {
         previousLevelUpExp = nextLevelUpExp;
-        if(player.stats.expLevelCurve.keys[player.stats.expLevelCurve.keys.Length-1].time > previousLevelUpExp)
+        if(player.baseStats.stats.expLevelCurve.keys[player.baseStats.stats.expLevelCurve.keys.Length-1].time > previousLevelUpExp)
         {
-            for (int i = player.stats.currentExp; i < player.stats.expLevelCurve.keys[player.stats.expLevelCurve.keys.Length-1].time; i++)
+            for (int i = player.stats.currentExp; i < player.baseStats.stats.expLevelCurve.keys[player.baseStats.stats.expLevelCurve.keys.Length-1].time; i++)
             {
-                if(player.stats.expLevelCurve.Evaluate(i) > player.stats.level)
+                if((int)player.stats.expLevelCurve.Evaluate(i) > player.stats.level)
                 {
                     nextLevelUpExp = i;
                     break;

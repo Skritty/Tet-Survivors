@@ -618,6 +618,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4960988796925850239}
     - target: {fileID: 8703707428719217332, guid: 789d2d6822f77fa488826daf6e58bbbc, type: 3}
+      propertyPath: expBarSize
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703707428719217332, guid: 789d2d6822f77fa488826daf6e58bbbc, type: 3}
       propertyPath: abilityTree
       value: 
       objectReference: {fileID: 1690375003985689158}

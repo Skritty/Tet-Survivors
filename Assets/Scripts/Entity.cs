@@ -230,9 +230,9 @@ public class Entity : PooledObject
 
     public void GainExp(int amount)
     {
-        Debug.Log($"Exp gained: {amount}");
         stats.currentExp += amount;
-        if(stats.expLevelCurve.Evaluate(stats.currentExp) > stats.level)
+        Debug.Log($"Exp gained: {amount} | level = {stats.expLevelCurve.Evaluate(stats.currentExp)}");
+        if ((int)stats.expLevelCurve.Evaluate(stats.currentExp) > stats.level)
         {
             stats.level++;
             // ON LEVEL UP STUFF
