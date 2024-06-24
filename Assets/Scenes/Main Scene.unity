@@ -490,6 +490,10 @@ PrefabInstance:
       value: 30000
       objectReference: {fileID: 0}
     - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
+      propertyPath: waves.Array.data[0].spawns.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: waves.Array.data[4].spawns.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -521,6 +525,10 @@ PrefabInstance:
       propertyPath: waves.Array.data[11].spawns.Array.size
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
+      propertyPath: waves.Array.data[0].spawns.Array.data[3].enemy
+      value: 
+      objectReference: {fileID: 4984791744489860096, guid: 22edbc1bae8363b48888458e834629b3, type: 3}
     - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: waves.Array.data[4].spawns.Array.data[0].enemy
       value: 
@@ -968,6 +976,10 @@ PrefabInstance:
     - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: globalEnemyHealthScalingOverTime.m_Curve.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
+      propertyPath: waves.Array.data[0].spawns.Array.data[3].spawnEveryXFrames
+      value: 1505
       objectReference: {fileID: 0}
     - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: waves.Array.data[4].spawns.Array.data[0].spawnEveryXFrames
