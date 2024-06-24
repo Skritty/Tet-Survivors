@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     allegience: 2
-    facing: {x: 0, y: 0}
     expDropped: 0
     expLevelCurve:
       serializedVersion: 2
@@ -22,17 +21,26 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 0.01
-        outSlope: 0.01
+        inSlope: 0.059023045
+        outSlope: 0.059023045
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 10000
-        value: 100
-        inSlope: 0.01
-        outSlope: 0.01
+        time: 84.71268
+        value: 5
+        inSlope: 0.0068458095
+        outSlope: 0.0068458095
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.25718957
+      - serializedVersion: 3
+        time: 678
+        value: 23
+        inSlope: 0.03033943
+        outSlope: 0.03033943
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -45,8 +53,13 @@ MonoBehaviour:
     level: 0
     currentExp: 0
     currentHealth: 100
+    totalDistanceTraveled: 0
+    facing: {x: 0, y: 0}
+    buffs: []
     maxHealth: 100
+    cooldownReduction: 0
     damageMultiplier: 1
     movementScaling: 1
     areaScaling: 1
     expAttractScaling: 1
+    overrideDamageAllegience: 0

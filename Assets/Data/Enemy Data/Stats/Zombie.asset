@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     allegience: 8
-    expDropped: 40
+    expDropped: 1
     expLevelCurve:
       serializedVersion: 2
       m_Curve: []

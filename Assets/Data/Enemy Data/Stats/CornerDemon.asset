@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     allegience: 4
-    facing: {x: 0, y: 0}
-    expDropped: 40
+    expDropped: 1
     expLevelCurve:
       serializedVersion: 2
       m_Curve: []
@@ -27,8 +26,13 @@ MonoBehaviour:
     level: 1
     currentExp: 0
     currentHealth: 15
+    totalDistanceTraveled: 0
+    facing: {x: 0, y: 0}
+    buffs: []
     maxHealth: 15
+    cooldownReduction: 0
     damageMultiplier: 1
     movementScaling: 1
     areaScaling: 1
     expAttractScaling: 1
+    overrideDamageAllegience: 0
