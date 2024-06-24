@@ -11,6 +11,11 @@ public class GameManager : MonoBehaviour
     public Entity player;
     public AbilityTree abilityTree;
     public GameObject mainMenu, pauseMenu, gameoverScreen;
+    public RectTransform healthBar, healthBarBack, healthBarMask, healthBarFrame, expBar;
+    public Ability firecrackerAbility;
+    public Animator firecrackerCooldown;
+    public int healthBarPixelsPerUnit, expBarPixelsPerUnit;
+    private int previousLevelUpExp, nextLevelUpExp;
     public ExpOrb expOrb;
     public AnimationCurve globalEnemyHealthScalingOverTime;
     public static float enemyHealthMulti => Instance.globalEnemyHealthScalingOverTime.Evaluate(Instance.globalTick);
@@ -42,12 +47,51 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
         Instance = this;
+        CalculateNextExpRequirement();
     }
 
     private void FixedUpdate()
     {
         globalTick++;
         EnemySpawns();
+        UpdateHealthBar();
+        FirecrackerCooldown();
+    }
+
+    private void UpdateHealthBar()
+    {
+        healthBar.sizeDelta = new Vector2(player.stats.currentHealth * healthBarPixelsPerUnit, healthBar.sizeDelta.y);
+        healthBarBack.sizeDelta = new Vector2(player.stats.maxHealth * healthBarPixelsPerUnit, healthBarBack.sizeDelta.y);
+        healthBarMask.sizeDelta = new Vector2(player.stats.maxHealth * healthBarPixelsPerUnit, healthBarMask.sizeDelta.y);
+        healthBarFrame.sizeDelta = new Vector2(player.stats.maxHealth * healthBarPixelsPerUnit, healthBarFrame.sizeDelta.y);
+        expBar.sizeDelta = new Vector2(player.stats.currentExp / nextLevelUpExp * expBarPixelsPerUnit, expBar.sizeDelta.y);
+    }
+
+    private void FirecrackerCooldown()
+    {
+        if(globalTick % (firecrackerAbility.cooldownTicks / 7f) < 1)
+            firecrackerCooldown.SetTrigger("Progress");
+    }
+
+    public void OnFirecrackerUsed()
+    {
+        firecrackerCooldown.SetTrigger("Activated");
+    }
+
+    public void CalculateNextExpRequirement()
+    {
+        previousLevelUpExp = nextLevelUpExp;
+        if(player.stats.expLevelCurve.keys[player.stats.expLevelCurve.keys.Length-1].time > previousLevelUpExp)
+        {
+            for (int i = player.stats.currentExp; i < player.stats.expLevelCurve.keys[player.stats.expLevelCurve.keys.Length-1].time; i++)
+            {
+                if(player.stats.expLevelCurve.Evaluate(i) > player.stats.level)
+                {
+                    nextLevelUpExp = i;
+                    break;
+                }
+            }
+        }
     }
 
     private void EnemySpawns()

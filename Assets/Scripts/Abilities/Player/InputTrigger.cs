@@ -24,7 +24,11 @@ public class InputTrigger : Ability
     {
         if (Input.GetKey(key))
         {
-            Debug.Log(abilityName);
+            if(abilityName == "Firecracker")
+            {
+                // This is NOT the correct way to do things
+                GameManager.Instance.OnFirecrackerUsed();
+            }
             self.stats.activationTicks[this] = self.currentTick;
             toTrigger.CooldownActivation(self);
         }

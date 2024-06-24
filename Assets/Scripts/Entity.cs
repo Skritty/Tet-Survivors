@@ -237,6 +237,7 @@ public class Entity : PooledObject
             stats.level++;
             // ON LEVEL UP STUFF
             GameManager.Instance.abilityTree.gameObject.SetActive(true);
+            GameManager.Instance.CalculateNextExpRequirement();
         }
     }
 }

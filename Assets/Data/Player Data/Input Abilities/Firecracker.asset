@@ -15,9 +15,11 @@ MonoBehaviour:
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
   abilityName: Firecracker
+  abilityDescription: 
   enabled: 1
   activateOnSpawn: 0
-  cooldownTicks: 60
+  animationTrigger: 
+  cooldownTicks: 300
   replaceAbility: {fileID: 0}
   key: 120
   toTrigger: {fileID: 11400000, guid: 74cc005d744a45d41beed9fa720253dc, type: 2}
