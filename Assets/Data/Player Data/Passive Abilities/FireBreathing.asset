@@ -21,7 +21,7 @@ MonoBehaviour:
   activateOnSpawn: 0
   animationTrigger: 
   animationDuration: 0
-  cooldownTicks: 400
+  cooldownTicks: 600
   replaceAbility: {fileID: 0}
   continuous: 0
   aoe:

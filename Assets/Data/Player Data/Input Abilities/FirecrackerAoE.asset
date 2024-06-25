@@ -40,6 +40,8 @@ MonoBehaviour:
       angleDegrees: 360
       selfSlowMultiDuringStage: 0
       VFX: {fileID: 0}
+      SFX: {fileID: 0}
+      playingVFX: {fileID: 0}
     - damage:
         entitiesDamaged: 28
         damageScale: 0
@@ -52,8 +54,10 @@ MonoBehaviour:
       timesRepeated: 0
       radius: 6
       angleDegrees: 360
-      selfSlowMultiDuringStage: 1
+      selfSlowMultiDuringStage: 0
       VFX: {fileID: 0}
+      SFX: {fileID: 0}
+      playingVFX: {fileID: 0}
     - damage:
         entitiesDamaged: 4
         damageScale: 0.3
@@ -68,4 +72,6 @@ MonoBehaviour:
       angleDegrees: 360
       selfSlowMultiDuringStage: 1
       VFX: {fileID: 7802850984575717093, guid: 139c3e50ea3291d4dac7d164820a21b4, type: 3}
+      SFX: {fileID: 0}
+      playingVFX: {fileID: 0}
     playing: 0

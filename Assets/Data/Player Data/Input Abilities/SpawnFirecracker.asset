@@ -24,6 +24,6 @@ MonoBehaviour:
   cooldownTicks: 0
   replaceAbility: {fileID: 0}
   proxy: {fileID: 1379803837843141317, guid: 2cd3308211ec47244956521b4726a886, type: 3}
-  slowOnSpawnMulti: 0
+  slowOnSpawnMulti: 1
   slowOnSpawnTickDuration: 40
   removeAfterTicks: 170
