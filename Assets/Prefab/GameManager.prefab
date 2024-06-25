@@ -49,6 +49,17 @@ MonoBehaviour:
   mainMenu: {fileID: 0}
   pauseMenu: {fileID: 0}
   gameoverScreen: {fileID: 0}
+  healthBar: {fileID: 0}
+  healthBarBack: {fileID: 0}
+  healthBarMask: {fileID: 0}
+  healthBarFrame: {fileID: 0}
+  expBar: {fileID: 0}
+  score: {fileID: 0}
+  highscore: {fileID: 0}
+  firecrackerAbility: {fileID: 0}
+  firecrackerCooldown: {fileID: 0}
+  healthBarPixelsPerUnit: 0
+  expBarSize: 0
   expOrb: {fileID: 1839415796997460108, guid: 2c25d98eeac4e2841bd6a3442cf6a397, type: 3}
   globalEnemyHealthScalingOverTime:
     serializedVersion: 2
@@ -74,6 +85,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  menuSong: {fileID: 11400000, guid: 1e59be03d3d6e3649b4a206b6b4294c7, type: 2}
+  gameSong: {fileID: 11400000, guid: 82b35fb61f4c8b944a12106fc19071ef, type: 2}
   entities: []
   spawnRadius: 10
   waves:

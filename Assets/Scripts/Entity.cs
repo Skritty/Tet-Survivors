@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
+using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Entity : PooledObject
 {
@@ -15,9 +17,11 @@ public class Entity : PooledObject
     public int currentTick;
     public List<Ability> abilities;
 
-    public Action OnDeath;
-    public Action OnHit;
-    public Action WhenHit;
+    public UnityEvent<Entity> OnDeath;
+    public UnityEvent<Entity> OnHit;
+    public UnityEvent<Entity> WhenHit;
+    private bool hitTriggeredThisTick;
+    public UnityEvent OnLevel;
 
     public bool IsStunned
     {
@@ -115,6 +119,7 @@ public class Entity : PooledObject
     public void FixedUpdate()
     {
         currentTick++;
+        hitTriggeredThisTick = false;
         CalculateStats();
         AbilityTriggers();
         BuffDecrement();
@@ -198,6 +203,11 @@ public class Entity : PooledObject
     public void DamageTaken(Entity source, DamageInstance damage)
     {
         stats.currentHealth = Mathf.Clamp(stats.currentHealth - damage.damageScale, 0, stats.maxHealth);
+        if(damage.damageScale > 0 && !hitTriggeredThisTick)
+        {
+            WhenHit.Invoke(source);
+            hitTriggeredThisTick = true;
+        }
         //Debug.Log($"{name} took {damage.damageScale} damage!");
         if(stats.currentHealth <= 0)
         {
@@ -246,6 +256,7 @@ public class Entity : PooledObject
         if ((int)stats.expLevelCurve.Evaluate(stats.currentExp) > stats.level)
         {
             stats.level++;
+            OnLevel.Invoke();
             // ON LEVEL UP STUFF
             GameManager.Instance.CalculateNextExpRequirement();
             GameManager.Instance.abilityTree.gameObject.SetActive(true);

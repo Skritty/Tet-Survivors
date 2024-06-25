@@ -61,7 +61,7 @@ public class AoE
         {
             if (!playingVFX)
             {
-                //SFX.PlayFollowing(origin.transform);
+                SFX?.PlayFollowing(origin.transform);
                 playingVFX = VFX?.RequestObject().GetComponent<PooledObject>();
             }
             

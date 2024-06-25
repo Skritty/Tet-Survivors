@@ -1165,6 +1165,7 @@ MonoBehaviour:
   b1: {fileID: 5529372837513682925}
   b2: {fileID: 2355403896405562753}
   b3: {fileID: 2877073818037043303}
+  ticksBeforeKeyboardSelection: 60
 --- !u!114 &6905529423818751528
 MonoBehaviour:
   m_ObjectHideFlags: 0

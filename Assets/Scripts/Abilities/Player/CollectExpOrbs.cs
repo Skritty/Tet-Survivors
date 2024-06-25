@@ -12,6 +12,7 @@ public class CollectExpOrbs : Ability
     {
         foreach(ExpOrb orb in ExpOrb.expOrbs.ToArray())
         {
+            if (orb == null) continue; // Yippee memory leak
             Vector3 dir = orb.transform.position - self.transform.position;
             if (dir.magnitude > attractionRadius * self.stats.expAttractScaling) continue;
             orb.transform.position -= dir.normalized * attractionCurve.Evaluate(dir.magnitude / (attractionRadius * self.stats.expAttractScaling)) * Time.fixedDeltaTime;

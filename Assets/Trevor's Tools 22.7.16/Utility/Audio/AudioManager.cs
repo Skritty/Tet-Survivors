@@ -27,6 +27,8 @@ namespace Trevor.Tools.Audio
             public List<AudioDefinitionSO> audioDefinitions = new();
         }
 
+        private AudioSource songSource;
+
         [SerializeField]//, ShowInInspector, DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.Foldout, KeyLabel = "Group", ValueLabel = "Settings")]
         private AudioGroup audioGroups = new();
 
@@ -177,31 +179,12 @@ namespace Trevor.Tools.Audio
             {
                 case AudioDefinitionSO.AudioClipType.MusicTrack:
                 {
-                    foreach(AudioSource track in group.audioSources)
-                    {
-                        if(track == source)
-                        {
-                            //track.DOKill();
-                            float percentComplete = track.volume / audioDefinition.Volume;
-                            //track.DOFade(audioDefinition.Volume, audioDefinition.FadeInTime * percentComplete);
-                            if(!source.isPlaying)
-                            {
-                                source.clip = audioDefinition.Song;
-                                source.Play();
-                            }
-                            else
-                            {
-                                alreadyPlaying = true;
-                            }
-                        }
-                        else
-                        {
-                            //track.DOKill();
-                            float percentComplete = track.volume / group.audioDefinitions[group.audioSources.IndexOf(track)].Volume;
-                            //track.DOFade(0, group.audioDefinitions[0].FadeOutTime * percentComplete);
-                        }
-                    }
-                    break;
+                        if (songSource != null) source = songSource;
+                        source.volume = audioDefinition.Volume;
+                        source.clip = audioDefinition.Song;
+                        source.Play();
+                        songSource = source;
+                        break;
                 }
                 case AudioDefinitionSO.AudioClipType.SoundEffect:
                 {

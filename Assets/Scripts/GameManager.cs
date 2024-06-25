@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using TMPro;
+using Trevor.Tools.Audio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     private int previousLevelUpExp, nextLevelUpExp;
     public ExpOrb expOrb;
     public AnimationCurve globalEnemyHealthScalingOverTime;
+    public AudioDefinitionSO menuSong, gameSong;
     public static float enemyHealthMulti => Instance.globalEnemyHealthScalingOverTime.Evaluate(Instance.globalTick);
     public List<Entity> entities = new List<Entity>();
     public float spawnRadius;
@@ -55,6 +57,7 @@ public class GameManager : MonoBehaviour
     {
         CalculateNextExpRequirement();
         CalculateHighscore();
+        menuSong.Play();
     }
 
     private void FixedUpdate()
@@ -167,6 +170,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        gameSong.Play();
         Time.timeScale = 1;
         mainMenu.SetActive(false);
     }

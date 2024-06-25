@@ -156,12 +156,9 @@ MonoBehaviour:
   subtitles: {fileID: 0}
   subsBackground: {fileID: 0}
   audioGroups:
-    serializedPairs:
-    - key: {fileID: 24300002, guid: 42779b6c71915814197fdafc8f181c55, type: 2}
-      value:
-        defaultSFXSource: {fileID: 0}
-        audioSources: []
-        audioDefinitions: []
+    defaultSFXSource: {fileID: 5923371510208896918, guid: 99b200e92cb50cd4f849949fa496044d, type: 3}
+    audioSources: []
+    audioDefinitions: []
 --- !u!1001 &844817548046751621
 PrefabInstance:
   m_ObjectHideFlags: 0

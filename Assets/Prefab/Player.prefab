@@ -154,7 +154,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 10
   maximumPoolSize: 20
-  poolID: 27968
+  poolID: 39542
   prefab: {fileID: 8920718006239068618}
   OnGet:
     m_PersistentCalls:
@@ -183,6 +183,7 @@ MonoBehaviour:
     facing: {x: 0, y: 0}
     buffs: []
     maxHealth: 0
+    regeneration: 0
     cooldownReduction: 0
     damageMultiplier: 0
     movementScaling: 0
@@ -196,3 +197,39 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 84243deb8e6259d40854783fc296be62, type: 2}
   - {fileID: 11400000, guid: 3fb68e844eaa70449a218ab23253978f, type: 2}
   - {fileID: 11400000, guid: 95c3d10405bb92b49a21202aec0c411c, type: 2}
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
+  WhenHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: d3233982034d01948a916db1022a773b, type: 2}
+        m_TargetAssemblyTypeName: Trevor.Tools.Audio.AudioDefinitionSO, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnLevel:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: d32e20682d58e194b9d3f6e6c5e5e2ed, type: 2}
+        m_TargetAssemblyTypeName: Trevor.Tools.Audio.AudioDefinitionSO, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

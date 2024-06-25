@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dffdb76b009cd64cad57f81f62568b7, type: 3}
+  m_Name: ExpPickup
+  m_EditorClassIdentifier: 
+  <ClipType>k__BackingField: 0
+  <OrderMethod>k__BackingField: 0
+  <MaximumSimultaneousAllowed>k__BackingField: 4
+  <Sounds>k__BackingField:
+  - {fileID: 8300000, guid: 7345049bca22caa42ac3a1f5cfe838bf, type: 3}
+  <RandomPitchVariance>k__BackingField: {x: -0.2, y: 0.2}
+  <InitialDelay>k__BackingField: 0
+  <Subtitles>k__BackingField: []
+  <Song>k__BackingField: {fileID: 0}
+  <FadeInTime>k__BackingField: 0
+  <FadeOutTime>k__BackingField: 0
+  <Output>k__BackingField: {fileID: 0}
+  <Loop>k__BackingField: 0
+  <Priority>k__BackingField: 128
+  <Volume>k__BackingField: 0.6
+  <Pitch>k__BackingField: 1
+  <StereoPan>k__BackingField: 0
+  <SpatialBlend>k__BackingField: 0
+  <ReverbZoneMix>k__BackingField: 1

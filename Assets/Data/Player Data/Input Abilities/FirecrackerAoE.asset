@@ -72,6 +72,6 @@ MonoBehaviour:
       angleDegrees: 360
       selfSlowMultiDuringStage: 1
       VFX: {fileID: 7802850984575717093, guid: 139c3e50ea3291d4dac7d164820a21b4, type: 3}
-      SFX: {fileID: 0}
+      SFX: {fileID: 11400000, guid: 88d38d0cc8bf8ca408716950fb920501, type: 2}
       playingVFX: {fileID: 0}
     playing: 0

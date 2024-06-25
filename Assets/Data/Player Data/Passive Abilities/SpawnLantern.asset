@@ -27,4 +27,4 @@ MonoBehaviour:
   proxy: {fileID: 2230100937696556298, guid: 1c3196afeaf9d9440bfea266aded8093, type: 3}
   slowOnSpawnMulti: 0
   slowOnSpawnTickDuration: 0
-  removeAfterTicks: 1652
+  removeAfterTicks: 99999999

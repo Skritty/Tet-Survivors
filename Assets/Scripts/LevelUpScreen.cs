@@ -10,15 +10,20 @@ public class LevelUpScreen : MonoBehaviour
     public TextMeshProUGUI name1, name2, name3;
     public TextMeshProUGUI desc1, desc2, desc3;
     public Button b1, b2, b3;
+    public int ticksBeforeKeyboardSelection;
+    private int timer;
 
     private void OnEnable()
     {
         Time.timeScale = 0;
         GenerateOptions();
+        timer = 0;
     }
 
     private void Update()
     {
+        timer++;
+        if (timer < ticksBeforeKeyboardSelection) return;
         if (Input.GetKeyDown(KeyCode.Z))
         {
             b1.onClick.Invoke();
