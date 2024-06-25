@@ -11,9 +11,11 @@ public abstract class Ability : ScriptableObject
     [Header("Ability Info")]
     public string abilityName;
     public string abilityDescription;
+    public bool temporary;
     public bool enabled = true;
     public bool activateOnSpawn;
     public string animationTrigger;
+    public float animationDuration;
     public int cooldownTicks;
     public Ability replaceAbility;
 
@@ -24,7 +26,7 @@ public abstract class Ability : ScriptableObject
     public virtual void CheckCooldownTrigger(int tick, Entity self)
     {
         if (self.IsStunned) return;
-        if (cooldownTicks == 0 || tick % cooldownTicks == 0) CooldownActivation(self);
+        if (cooldownTicks == 0 || tick % (cooldownTicks / self.stats.cooldownReduction) < 1) CooldownActivation(self);
     }
     public virtual void CooldownActivation(Entity self) { }
     public virtual void CalculateStats(Entity self, Stats stats) { }
@@ -38,7 +40,14 @@ public abstract class Ability : ScriptableObject
         IEnumerator Play()
         {
             self.animator.SetBool(animationTrigger, true);
-            yield return new WaitUntil(() => self.animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !self.animator.IsInTransition(0));
+            if(animationDuration > 0)
+            {
+                yield return new WaitForSeconds(animationDuration);
+            }
+            else
+            {
+                yield return new WaitUntil(() => self.animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !self.animator.IsInTransition(0));
+            }
             self.animator.SetBool(animationTrigger, false);
         }
     }

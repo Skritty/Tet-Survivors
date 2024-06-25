@@ -16,9 +16,11 @@ MonoBehaviour:
   unlockedOnObtain: []
   abilityName: Spirit Move
   abilityDescription: 
+  temporary: 0
   enabled: 1
   activateOnSpawn: 0
   animationTrigger: Move
+  animationDuration: 0
   cooldownTicks: 0
   replaceAbility: {fileID: 0}
   keepDistance: 3

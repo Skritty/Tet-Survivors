@@ -16,25 +16,30 @@ MonoBehaviour:
   unlockedOnObtain: []
   abilityName: Fire Breathing
   abilityDescription: Spew fire in a cone in front of you every few seconds.
+  temporary: 0
   enabled: 1
   activateOnSpawn: 0
   animationTrigger: 
+  animationDuration: 0
   cooldownTicks: 400
   replaceAbility: {fileID: 0}
+  continuous: 0
   aoe:
     stages:
     - damage:
         entitiesDamaged: 28
-        damageScale: 0.3
+        damageScale: 0.1
         knockbackPower: 0
         knockbackTickDuration: 0
         stunTickDuration: 0
         slowMulti: 0
         slowTickDuration: 0
       tickDuration: 5
-      timesRepeated: 10
-      radius: 3
-      angleDegrees: 120
+      timesRepeated: 50
+      radius: 7
+      angleDegrees: 45
       selfSlowMultiDuringStage: 1
-      VFX: {fileID: 0}
+      VFX: {fileID: 346894217875811318, guid: f0651718036b7074d897d09bdba937d4, type: 3}
+      SFX: {fileID: 0}
+      playingVFX: {fileID: 0}
     playing: 0

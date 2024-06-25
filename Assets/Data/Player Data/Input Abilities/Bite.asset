@@ -16,10 +16,12 @@ MonoBehaviour:
   unlockedOnObtain: []
   abilityName: Bite
   abilityDescription: 
+  temporary: 0
   enabled: 1
   activateOnSpawn: 0
   animationTrigger: Bite
-  cooldownTicks: 100
+  animationDuration: 0
+  cooldownTicks: 50
   replaceAbility: {fileID: 0}
   key: 122
   toTrigger: {fileID: 11400000, guid: ebd01a3cd67244443afb688e64fc4bcd, type: 2}

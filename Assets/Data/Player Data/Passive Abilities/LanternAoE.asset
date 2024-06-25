@@ -14,27 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
-  animationTrigger: 
-  VFX: {fileID: 0}
   abilityName: Lantern AoE
   abilityDescription: 
+  temporary: 0
   enabled: 1
   activateOnSpawn: 0
-  cooldownTicks: 1
+  animationTrigger: 
+  animationDuration: 0
+  cooldownTicks: 0
   replaceAbility: {fileID: 0}
+  continuous: 1
   aoe:
     stages:
     - damage:
         entitiesDamaged: 28
-        damageScale: 0.005
+        damageScale: 0.02
         knockbackPower: 0
         knockbackTickDuration: 0
         stunTickDuration: 0
         slowMulti: 0.6
-        slowTickDuration: 2
-      tickDuration: 1
+        slowTickDuration: 5
+      tickDuration: 5
       timesRepeated: 0
       radius: 2
       angleDegrees: 360
-      selfSlowMultiDuringStage: 0
-    playing: 1
+      selfSlowMultiDuringStage: 1
+      VFX: {fileID: 3037709805694734267, guid: a0444bc16f9d9e747a1320e753fa8268, type: 3}
+    playing: 0

@@ -14,15 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
-  animationTrigger: 
-  VFX: {fileID: 0}
   abilityName: Lantern
   abilityDescription: Create a lantern that follows you and deals damage and slows
     in an area.
+  temporary: 0
   enabled: 1
   activateOnSpawn: 1
+  animationTrigger: 
+  animationDuration: 0
   cooldownTicks: 99999999
   replaceAbility: {fileID: 0}
   proxy: {fileID: 2230100937696556298, guid: 1c3196afeaf9d9440bfea266aded8093, type: 3}
   slowOnSpawnMulti: 0
   slowOnSpawnTickDuration: 0
+  removeAfterTicks: 1652

@@ -51,10 +51,12 @@ public class Stats
     public List<Buff> buffs;
     //[HideInInspector]
     public Dictionary<Ability, int> activationTicks; // For abilities that don't trigger repeatedly, and buff/debuff durations
+    public Dictionary<Ability, AoE> aoes;
     
     [Header("Modifiable Stats")]
     public float maxHealth;
-    public int cooldownReduction;
+    public float regeneration;
+    public float cooldownReduction = 1;
     public float damageMultiplier = 1;
     public float movementScaling = 1;
     public float areaScaling = 1;
@@ -74,6 +76,7 @@ public class Stats
             stats.facing = existing.facing;
             stats.buffs = existing.buffs;
             stats.activationTicks = existing.activationTicks;
+            stats.aoes = existing.aoes;
             stats.overrideDamageAllegience = existing.overrideDamageAllegience;
         }
         else
@@ -81,6 +84,7 @@ public class Stats
             stats.currentHealth = stats.maxHealth;
             stats.buffs = new List<Buff>();
             stats.activationTicks = new Dictionary<Ability, int>();
+            stats.aoes = new Dictionary<Ability, AoE>();
         }
         return stats;
     }
@@ -88,7 +92,8 @@ public class Stats
     public void StatCombineAdditive(Stats other)
     {
         maxHealth += other.maxHealth;
-        cooldownReduction += other.cooldownReduction;
+        regeneration += other.regeneration;
+        cooldownReduction += other.cooldownReduction - 1;
         damageMultiplier += other.damageMultiplier - 1;
         movementScaling += other.movementScaling - 1;
         areaScaling += other.areaScaling - 1;
@@ -98,6 +103,7 @@ public class Stats
     public void StatCombineMultiplicative(Stats other)
     {
         maxHealth += other.maxHealth;
+        regeneration += other.regeneration;
         cooldownReduction += other.cooldownReduction;
         damageMultiplier *= other.damageMultiplier;
         movementScaling *= other.movementScaling;

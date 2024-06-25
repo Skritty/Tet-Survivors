@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     public AbilityTree abilityTree;
     public GameObject mainMenu, pauseMenu, gameoverScreen;
     public RectTransform healthBar, healthBarBack, healthBarMask, healthBarFrame, expBar;
+    public TextMeshProUGUI score, highscore;
     public Ability firecrackerAbility;
     public Animator firecrackerCooldown;
     public int healthBarPixelsPerUnit, expBarSize;
@@ -52,6 +54,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         CalculateNextExpRequirement();
+        CalculateHighscore();
     }
 
     private void FixedUpdate()
@@ -62,18 +65,26 @@ public class GameManager : MonoBehaviour
         FirecrackerCooldown();
     }
 
+    private void Update()
+    {
+        if (!mainMenu.activeSelf && !gameoverScreen.activeSelf && !abilityTree.gameObject.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame(Time.timeScale == 1 ? true : false);
+        }
+    }
+
     private void UpdateHealthBar()
     {
         healthBar.sizeDelta = new Vector2(player.stats.currentHealth * healthBarPixelsPerUnit, healthBar.sizeDelta.y);
         healthBarBack.sizeDelta = new Vector2(player.stats.maxHealth * healthBarPixelsPerUnit, healthBarBack.sizeDelta.y);
         healthBarMask.sizeDelta = new Vector2(player.stats.maxHealth * healthBarPixelsPerUnit, healthBarMask.sizeDelta.y);
         healthBarFrame.sizeDelta = new Vector2(player.stats.maxHealth * healthBarPixelsPerUnit, healthBarFrame.sizeDelta.y);
-        expBar.sizeDelta = new Vector2(1f * player.stats.currentExp / nextLevelUpExp * expBarSize, expBar.sizeDelta.y);
+        expBar.sizeDelta = new Vector2(1f * (player.stats.currentExp - previousLevelUpExp) / (nextLevelUpExp - previousLevelUpExp) * expBarSize, expBar.sizeDelta.y);
     }
 
     private void FirecrackerCooldown()
     {
-        if(globalTick % (firecrackerAbility.cooldownTicks / 7f) < 1)
+        if(globalTick % (firecrackerAbility.cooldownTicks / 6f) < 1)
             firecrackerCooldown.SetTrigger("Progress");
     }
 
@@ -141,6 +152,17 @@ public class GameManager : MonoBehaviour
         {
             entity.currentTick = 0;
         }
+        if(PlayerPrefs.GetInt("highscore") < globalTick)
+            PlayerPrefs.SetInt("highscore", globalTick);
+        CalculateHighscore();
+        globalTick = 0;
+        gameoverScreen.SetActive(true);
+    }
+
+    private void CalculateHighscore()
+    {
+        highscore.text = new DateTime().AddSeconds(PlayerPrefs.GetInt("highscore") * 20 / 1000f).ToString("m:ss");
+        score.text = new DateTime().AddSeconds(globalTick * 20 / 1000f).ToString("m:ss");
     }
 
     public void StartGame()

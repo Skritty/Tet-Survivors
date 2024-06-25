@@ -7,6 +7,7 @@ using static UnityEngine.GraphicsBuffer;
 public class PlayerProximityTriggeredAttack : GenericAoE
 {
     public float activationDistance;
+    public EntityType targetType;
 
     public override void Initialize(Entity self)
     {
@@ -16,13 +17,40 @@ public class PlayerProximityTriggeredAttack : GenericAoE
 
     public override void CheckCooldownTrigger(int tick, Entity self)
     {
-        if (self.IsStunned) return;
-        if (!GameManager.Instance.player.isActiveAndEnabled) return;
-        if ((GameManager.Instance.player.transform.position - self.transform.position).magnitude > activationDistance) return;
-        if (tick >= self.stats.activationTicks[this] + cooldownTicks)
+        Entity closest = null;
+        float closestDist = float.MaxValue;
+        foreach (Entity t in GameManager.Instance.entities)
         {
-            CooldownActivation(self); 
-            self.stats.activationTicks[this] = self.currentTick;
+            if (!targetType.HasFlag(t.stats.allegience)) continue;
+            if ((t.transform.position - self.transform.position).sqrMagnitude < closestDist)
+            {
+                closest = t;
+                closestDist = (t.transform.position - self.transform.position).sqrMagnitude;
+            }
         }
+        if (closest == null)
+        {
+            aoe.StopAllFX();
+            return;
+        }
+        if ((closest.transform.position - self.transform.position).magnitude > activationDistance)
+        {
+            aoe.StopAllFX();
+            return;
+        }
+
+        if (continuous)
+        {
+            if (!self.stats.aoes[this].playing) CooldownActivation(self);
+        } 
+        else 
+        {
+            if (tick >= self.stats.activationTicks[this] + cooldownTicks)
+            {
+                CooldownActivation(self);
+                self.stats.activationTicks[this] = self.currentTick;
+            }
+        }
+        
     }
 }

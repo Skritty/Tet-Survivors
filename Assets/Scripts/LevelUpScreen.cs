@@ -17,6 +17,22 @@ public class LevelUpScreen : MonoBehaviour
         GenerateOptions();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            b1.onClick.Invoke();
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            b2.onClick.Invoke();
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            b3.onClick.Invoke();
+        }
+    }
+
     private void GenerateOptions()
     {
         List<Ability> abilities = abilityTree.RollForAbilities(3);

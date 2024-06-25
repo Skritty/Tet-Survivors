@@ -14,17 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
-  VFX: {fileID: 0}
   abilityName: Contact Damage
+  abilityDescription: 
+  temporary: 0
   enabled: 1
   activateOnSpawn: 0
-  cooldownTicks: 20
+  animationTrigger: 
+  animationDuration: 0
+  cooldownTicks: 5
   replaceAbility: {fileID: 0}
+  continuous: 0
   aoe:
     stages:
     - damage:
         entitiesDamaged: 2
-        damageScale: 0.1
+        damageScale: 0.025
         knockbackPower: 0
         knockbackTickDuration: 0
         stunTickDuration: 0
@@ -34,6 +38,9 @@ MonoBehaviour:
       timesRepeated: 0
       radius: 0.4
       angleDegrees: 360
-      selfSlowMultiDuringStage: 0
-    playing: 0
+      selfSlowMultiDuringStage: 1
+      VFX: {fileID: 0}
+      playingVFX: {fileID: 0}
+    playing: 1
   activationDistance: 0.4
+  targetType: 2

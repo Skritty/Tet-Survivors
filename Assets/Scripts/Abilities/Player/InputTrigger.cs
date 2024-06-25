@@ -12,6 +12,7 @@ public class InputTrigger : Ability
     {
         self.stats.activationTicks.Add(this, 0);
         base.Initialize(self);
+        toTrigger.Initialize(self);
     }
 
     public override void CheckCooldownTrigger(int tick, Entity self)

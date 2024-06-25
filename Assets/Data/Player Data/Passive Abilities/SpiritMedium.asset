@@ -14,17 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
-  animationTrigger: 
-  VFX: {fileID: 0}
   abilityName: Spirit Medium
   abilityDescription: Charms a spirit enemy to fight for you. The charmed enemy takes
     damage over time.
+  temporary: 0
   enabled: 1
   activateOnSpawn: 0
+  animationTrigger: 
+  animationDuration: 0
   cooldownTicks: 700
   replaceAbility: {fileID: 0}
-  radius: 4
+  radius: 9
   amountToCharm: 1
+  allyStatBuff: {fileID: 11400000, guid: d54fd952c3b4e004394672c68d33a84c, type: 2}
   targetType: 4
   newAllegience: 2
   damages: 28

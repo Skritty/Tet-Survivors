@@ -73,7 +73,7 @@ public class Entity : PooledObject
     {
         get
         {
-            float damage = 0;
+            float damage = -stats.regeneration;
             foreach (Buff buff in stats.buffs)
             {
                 if (buff.type == BuffType.DoT)
@@ -98,6 +98,10 @@ public class Entity : PooledObject
 
     public virtual void Initialize()
     {
+        foreach(Ability a in abilities.ToArray())
+        {
+            if (a.temporary) abilities.Remove(a);
+        }
         stats = baseStats.FetchStats();
         CalculateStats();
         stats.currentHealth = stats.maxHealth;
@@ -166,7 +170,10 @@ public class Entity : PooledObject
     protected virtual void BuffDecrement()
     {
         // DoT apply
-        stats.currentHealth -= DoT;
+        if(DoT != 0)
+        {
+            DamageTaken(this, new DamageInstance(DoT));
+        }
 
         foreach (Buff buff in stats.buffs.ToArray())
         {
@@ -190,8 +197,8 @@ public class Entity : PooledObject
 
     public void DamageTaken(Entity source, DamageInstance damage)
     {
-        stats.currentHealth -= damage.damageScale;
-        Debug.Log($"{name} took {damage.damageScale} damage!");
+        stats.currentHealth = Mathf.Clamp(stats.currentHealth - damage.damageScale, 0, stats.maxHealth);
+        //Debug.Log($"{name} took {damage.damageScale} damage!");
         if(stats.currentHealth <= 0)
         {
             Die();
@@ -224,6 +231,10 @@ public class Entity : PooledObject
         {
             GameManager.Instance.expOrb.Spawn(baseStats.stats.expDropped, transform.position);
         }
+        if(this == GameManager.Instance.player)
+        {
+            GameManager.Instance.GameOver();
+        }
         owner = null;
         ReleaseObject();
     }
@@ -236,8 +247,8 @@ public class Entity : PooledObject
         {
             stats.level++;
             // ON LEVEL UP STUFF
-            GameManager.Instance.abilityTree.gameObject.SetActive(true);
             GameManager.Instance.CalculateNextExpRequirement();
+            GameManager.Instance.abilityTree.gameObject.SetActive(true);
         }
     }
 }

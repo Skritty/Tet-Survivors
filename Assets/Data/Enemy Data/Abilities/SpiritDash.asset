@@ -16,13 +16,14 @@ MonoBehaviour:
   unlockedOnObtain: []
   abilityName: Spirit Dash
   abilityDescription: 
+  temporary: 0
   enabled: 1
   activateOnSpawn: 0
   animationTrigger: Dash
+  animationDuration: 0
   cooldownTicks: 250
   replaceAbility: {fileID: 0}
-  mode: 1
+  mode: 2
   KBconstant: {x: 0, y: 0, z: 0}
   KBPower: 0.2
   KBDuration: 60
-  typeFilter: 0

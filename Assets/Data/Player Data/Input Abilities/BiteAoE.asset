@@ -16,11 +16,14 @@ MonoBehaviour:
   unlockedOnObtain: []
   abilityName: Bite
   abilityDescription: 
+  temporary: 0
   enabled: 1
   activateOnSpawn: 0
   animationTrigger: Bite
-  cooldownTicks: 0
+  animationDuration: 0
+  cooldownTicks: 1
   replaceAbility: {fileID: 0}
+  continuous: 0
   aoe:
     stages:
     - damage:
@@ -31,7 +34,7 @@ MonoBehaviour:
         stunTickDuration: 0
         slowMulti: 0
         slowTickDuration: 0
-      tickDuration: 30
+      tickDuration: 18
       timesRepeated: 0
       radius: 2
       angleDegrees: 90
@@ -45,10 +48,10 @@ MonoBehaviour:
         stunTickDuration: 0
         slowMulti: 0
         slowTickDuration: 0
-      tickDuration: 20
+      tickDuration: 32
       timesRepeated: 0
-      radius: 2
+      radius: 3
       angleDegrees: 90
-      selfSlowMultiDuringStage: 0.4
-      VFX: {fileID: 0}
+      selfSlowMultiDuringStage: 0.6
+      VFX: {fileID: 3026967750780675944, guid: 15fc8a07b920d7243b3487b4be29a810, type: 3}
     playing: 1

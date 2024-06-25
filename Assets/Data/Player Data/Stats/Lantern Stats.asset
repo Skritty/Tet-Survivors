@@ -22,13 +22,16 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     baseDamage: 10
-    baseMovementSpeed: 1.6
+    baseMovementSpeed: 2.4
     level: 0
     currentExp: 0
     currentHealth: 0
+    totalDistanceTraveled: 0
     facing: {x: 0, y: 0}
-    maxHealth: 0
-    cooldownReduction: 0
+    buffs: []
+    maxHealth: 999999
+    regeneration: 0
+    cooldownReduction: 1
     damageMultiplier: 1
     movementScaling: 1
     areaScaling: 1

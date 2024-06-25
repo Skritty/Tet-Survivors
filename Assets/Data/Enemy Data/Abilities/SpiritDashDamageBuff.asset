@@ -15,8 +15,12 @@ MonoBehaviour:
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
   abilityName: 
+  abilityDescription: 
+  temporary: 0
   enabled: 1
   activateOnSpawn: 0
+  animationTrigger: 
+  animationDuration: 0
   cooldownTicks: 250
   replaceAbility: {fileID: 0}
   statsToBuff:
@@ -37,8 +41,9 @@ MonoBehaviour:
     facing: {x: 0, y: 0}
     buffs: []
     maxHealth: 0
+    regeneration: 0
     cooldownReduction: 0
-    damageMultiplier: 10
+    damageMultiplier: 20
     movementScaling: 1
     areaScaling: 1
     expAttractScaling: 1

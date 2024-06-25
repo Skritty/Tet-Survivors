@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
-  VFX: {fileID: 0}
   abilityName: 
+  abilityDescription: 
+  temporary: 0
   enabled: 1
   activateOnSpawn: 0
+  animationTrigger: 
+  animationDuration: 0
   cooldownTicks: 0
   replaceAbility: {fileID: 0}
+  continuous: 1
   aoe:
     stages:
     - damage:
@@ -35,5 +39,8 @@ MonoBehaviour:
       radius: 0.4
       angleDegrees: 360
       selfSlowMultiDuringStage: 0
+      VFX: {fileID: 226441755389822861, guid: b55ceae625ced65408252847d671f9de, type: 3}
+      playingVFX: {fileID: 0}
     playing: 0
   activationDistance: 0
+  targetType: 2

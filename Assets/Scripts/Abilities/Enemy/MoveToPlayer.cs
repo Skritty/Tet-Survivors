@@ -65,9 +65,9 @@ public class MoveToPlayer : Ability
 
         if(dir.magnitude != 0)
         {
-            Vector3 scale = self.animator.transform.localScale;
+            Vector3 scale = self.transform.localScale;
             scale.x = Mathf.Abs(scale.x) * -Mathf.Sign(dir.x);
-            self.animator.transform.localScale = scale;
+            self.transform.localScale = scale;
             PlayAnimation(self);
         }
 

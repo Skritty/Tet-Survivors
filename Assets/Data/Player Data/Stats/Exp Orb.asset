@@ -30,7 +30,7 @@ MonoBehaviour:
     facing: {x: 0, y: 0}
     buffs: []
     maxHealth: 150
-    cooldownReduction: 0
+    cooldownReduction: 1
     damageMultiplier: 0
     movementScaling: 0
     areaScaling: 0

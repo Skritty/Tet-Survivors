@@ -16,11 +16,14 @@ MonoBehaviour:
   unlockedOnObtain: []
   abilityName: Turn Undead
   abilityDescription: Fears all nearby enemies every 15 seconds.
+  temporary: 0
   enabled: 1
   activateOnSpawn: 0
   animationTrigger: 
+  animationDuration: 0
   cooldownTicks: 750
   replaceAbility: {fileID: 0}
+  continuous: 0
   aoe:
     stages:
     - damage:
@@ -33,8 +36,8 @@ MonoBehaviour:
         slowTickDuration: 0
       tickDuration: 35
       timesRepeated: 0
-      radius: 3
+      radius: 6
       angleDegrees: 360
       selfSlowMultiDuringStage: 1
-      VFX: {fileID: 0}
+      VFX: {fileID: 1574698528215790628, guid: 54fb8fa7fbd3ecb4f8b5d5838451145f, type: 3}
     playing: 0

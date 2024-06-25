@@ -1,3 +1,4 @@
+using Trevor.Tools.Audio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,7 +20,8 @@ public class AoE
         public float selfSlowMultiDuringStage = 1;
         // Particle effects
         public PooledObject VFX;
-        private PooledObject playingVFX;
+        public AudioDefinitionSO SFX;
+        public PooledObject playingVFX;
 
         public void CollisionCheckAll(Entity origin, Vector2 forward)
         {
@@ -55,13 +57,29 @@ public class AoE
             }
         }
 
-        public void StartFX()
+        public void StartFX(Entity origin)
         {
-            playingVFX = VFX?.RequestObject().GetComponent<PooledObject>();
+            if (!playingVFX)
+            {
+                //SFX.PlayFollowing(origin.transform);
+                playingVFX = VFX?.RequestObject().GetComponent<PooledObject>();
+            }
+            
             if (playingVFX)
             {
+                origin.StartCoroutine(Follow());
                 // Set AoE stuff here
                 //playingVFX?.GetComponent<ParticleSystem>().Play();
+            }
+            IEnumerator Follow()
+            {
+                while (playingVFX)
+                {
+                    playingVFX.transform.rotation = Quaternion.FromToRotation(Vector3.up, origin.stats.facing);
+                    playingVFX.transform.localScale = Vector3.one * radius * origin.stats.areaScaling;
+                    playingVFX.transform.position = origin.transform.position;
+                    yield return null;
+                }
             }
         }
 
@@ -70,7 +88,13 @@ public class AoE
             if (playingVFX)
             {
                 playingVFX.ReleaseObject();
+                playingVFX = null;
             }
+        }
+
+        public AoEStage CreateClone()
+        {
+            return (AoEStage)MemberwiseClone();
         }
     }
 
@@ -78,7 +102,7 @@ public class AoE
     [HideInInspector]
     public bool playing;
 
-    public void Trigger(Entity origin, Vector2 forward, Entity target = null)
+    public void Trigger(Entity origin, bool keepFXAlive = false, Entity target = null)
     {
         origin.StartCoroutine(PlayStages());
         IEnumerator PlayStages()
@@ -86,30 +110,51 @@ public class AoE
             playing = true;
             foreach (AoEStage stage in stages)
             {
+                stage.StartFX(origin);
                 for (int repeat = 0; repeat < stage.timesRepeated + 1; repeat++)
                 {
                     origin.stats.buffs.Add(new Buff(BuffType.Slow, stage.tickDuration, stage.selfSlowMultiDuringStage, origin));
-                    stage.StartFX();
+                    
                     if (stage.damage.damageScale != 0 || stage.damage.slowTickDuration > 0 || stage.damage.stunTickDuration > 0 || stage.damage.knockbackTickDuration > 0)
                     {
                         if (target == null)
                         {
-                            stage.CollisionCheckAll(origin, forward);
+                            stage.CollisionCheckAll(origin, origin.stats.facing);
                         }
                         else
                         {
-                            stage.CollisionCheckSingle(origin, forward, target);
+                            stage.CollisionCheckSingle(origin, origin.stats.facing, target);
                         }
                     }
                     for (int i = 0; i < stage.tickDuration; i++)
                     {
                         yield return new WaitForFixedUpdate();
                     }
-                    stage.EndFX();
                 }
+                if(!keepFXAlive)
+                    stage.EndFX();
             }
-            yield return null;
             playing = false;
         }
+    }
+
+    public void StopAllFX()
+    {
+        foreach (AoEStage stage in stages)
+        {
+            stage.playingVFX?.ReleaseObject();
+            stage.playingVFX = null;
+        }
+    }
+
+    public AoE CreateClone()
+    {
+        AoE aoe = (AoE)MemberwiseClone();
+        aoe.stages = new List<AoEStage>();
+        foreach(AoEStage stage in stages)
+        {
+            aoe.stages.Add(stage.CreateClone());
+        }
+        return aoe;
     }
 }

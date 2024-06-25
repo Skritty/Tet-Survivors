@@ -16,12 +16,14 @@ MonoBehaviour:
   unlockedOnObtain: []
   abilityName: Corner Demon Attack
   abilityDescription: 
+  temporary: 0
   enabled: 1
   activateOnSpawn: 0
   animationTrigger: Attack
-  animationTickDuration: 550
-  cooldownTicks: 600
+  animationDuration: 11
+  cooldownTicks: 734
   replaceAbility: {fileID: 0}
+  continuous: 0
   aoe:
     stages:
     - damage:
@@ -32,7 +34,7 @@ MonoBehaviour:
         stunTickDuration: 0
         slowMulti: 0
         slowTickDuration: 0
-      tickDuration: 50
+      tickDuration: 67
       timesRepeated: 0
       radius: 3
       angleDegrees: 0
@@ -51,6 +53,6 @@ MonoBehaviour:
       radius: 5
       angleDegrees: 360
       selfSlowMultiDuringStage: 1
-      VFX: {fileID: 0}
+      VFX: {fileID: 1574698528215790628, guid: 54fb8fa7fbd3ecb4f8b5d5838451145f, type: 3}
     playing: 1
   activationDistance: 5

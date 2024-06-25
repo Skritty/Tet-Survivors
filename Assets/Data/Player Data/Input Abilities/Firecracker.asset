@@ -16,10 +16,12 @@ MonoBehaviour:
   unlockedOnObtain: []
   abilityName: Firecracker
   abilityDescription: 
+  temporary: 0
   enabled: 1
   activateOnSpawn: 0
   animationTrigger: 
+  animationDuration: 0
   cooldownTicks: 600
   replaceAbility: {fileID: 0}
   key: 120
-  toTrigger: {fileID: 11400000, guid: 74cc005d744a45d41beed9fa720253dc, type: 2}
+  toTrigger: {fileID: 11400000, guid: acc186a4d38a9f14cb4ac906beaa4e66, type: 2}

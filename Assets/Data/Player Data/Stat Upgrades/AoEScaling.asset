@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51c5a065bb1ac3e4ea01e09d6eef9663, type: 3}
-  m_Name: MovementSpeedBuff
+  m_Name: AoEScaling
   m_EditorClassIdentifier: 
-  removeFromTreeOnUnlock: 1
+  removeFromTreeOnUnlock: 0
   unlockedOnObtain: []
-  animationTrigger: 
-  VFX: {fileID: 0}
-  abilityName: Movement Speed Up
-  abilityDescription: Increases movement speed by 20%.
+  abilityName: AoE Size
+  abilityDescription: Increases all AoE sizes by 14%.
+  temporary: 0
   enabled: 1
   activateOnSpawn: 0
+  animationTrigger: 
+  animationDuration: 0
   cooldownTicks: 0
   replaceAbility: {fileID: 0}
   statsToBuff:
@@ -40,10 +41,11 @@ MonoBehaviour:
     facing: {x: 0, y: 0}
     buffs: []
     maxHealth: 0
-    cooldownReduction: 0
+    regeneration: 0
+    cooldownReduction: 1
     damageMultiplier: 1
-    movementScaling: 1.2
-    areaScaling: 1
+    movementScaling: 1
+    areaScaling: 1.14
     expAttractScaling: 1
     overrideDamageAllegience: 0
   combineMethod: 0

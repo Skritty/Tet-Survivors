@@ -14,6 +14,12 @@ public class DamageInstance
     public float slowMulti = 1;
     public int slowTickDuration;
 
+    public DamageInstance() { }
+    public DamageInstance(float damage)
+    {
+        damageScale = damage;
+    }
+
     public DamageInstance CreateCopy()
     {
         return (DamageInstance) MemberwiseClone();

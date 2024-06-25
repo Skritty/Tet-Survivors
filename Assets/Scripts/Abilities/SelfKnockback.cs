@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 // This is used to make unslowable movement
 [CreateAssetMenu(menuName = "Abilities/SelfKnockback")]
@@ -11,14 +12,32 @@ public class SelfKnockback : Ability
     public Vector3 KBconstant;
     public float KBPower;
     public int KBDuration;
-    public EntityType typeFilter;
     public override void CooldownActivation(Entity self)
     {
         Vector3 dir = KBconstant.normalized;
 
         if (mode == TargetMode.NearestEntity)
         {
-
+            if(self.stats.overrideDamageAllegience != EntityType.None)
+            {
+                Entity closest = null;
+                float closestDist = float.MaxValue;
+                foreach (Entity t in GameManager.Instance.entities)
+                {
+                    if (!self.stats.overrideDamageAllegience.HasFlag(t.stats.allegience)) continue;
+                    if ((t.transform.position - self.transform.position).sqrMagnitude < closestDist)
+                    {
+                        closest = t;
+                        closestDist = (t.transform.position - self.transform.position).sqrMagnitude;
+                    }
+                }
+                if (closest == null) closest = self;
+                dir = (closest.transform.position - self.transform.position).normalized;
+            }
+            else
+            {
+                dir = (GameManager.Instance.player.transform.position - self.transform.position).normalized;
+            }
         }
 
         if(mode == TargetMode.Player)
