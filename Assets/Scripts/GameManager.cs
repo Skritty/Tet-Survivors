@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public ExpOrb expOrb;
     public AnimationCurve globalEnemyHealthScalingOverTime;
     public AudioDefinitionSO menuSong, gameSong;
+    public Vector2 backgroundOffset;
+    public Transform BG1, BG2, BG3, BG4;
     public static float enemyHealthMulti => Instance.globalEnemyHealthScalingOverTime.Evaluate(Instance.globalTick);
     public List<Entity> entities = new List<Entity>();
     public float spawnRadius;
@@ -70,10 +72,21 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        Background();
         if (!mainMenu.activeSelf && !gameoverScreen.activeSelf && !abilityTree.gameObject.activeSelf && Input.GetKeyDown(KeyCode.Escape))
         {
             PauseGame(Time.timeScale == 1 ? true : false);
         }
+    }
+
+    private void Background()
+    {
+        Vector2 currentCenter = new Vector2((player.transform.position.x + Mathf.Sign(player.transform.position.x) * backgroundOffset.x) - (player.transform.position.x + Mathf.Sign(player.transform.position.x) * backgroundOffset.x) % (backgroundOffset.x*2),
+            (player.transform.position.y + Mathf.Sign(player.transform.position.y) * backgroundOffset.y) - (player.transform.position.y + Mathf.Sign(player.transform.position.y) * backgroundOffset.y) % (backgroundOffset.y*2));
+        BG1.position = currentCenter + new Vector2(backgroundOffset.x, backgroundOffset.y);
+        BG2.position = currentCenter + new Vector2(backgroundOffset.x, -backgroundOffset.y);
+        BG3.position = currentCenter + new Vector2(-backgroundOffset.x, backgroundOffset.y);
+        BG4.position = currentCenter + new Vector2(-backgroundOffset.x, -backgroundOffset.y);
     }
 
     private void UpdateHealthBar()

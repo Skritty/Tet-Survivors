@@ -405,6 +405,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Management
       objectReference: {fileID: 0}
+    - target: {fileID: 3352162490884444925, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: player
       value: 
@@ -419,15 +423,15 @@ PrefabInstance:
       objectReference: {fileID: 963194227}
     - target: {fileID: 6384421832937911218, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 947.2467
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6384421832937911218, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 908.3907
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6384421832937911218, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.060811
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6384421832937911218, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: m_LocalRotation.w
