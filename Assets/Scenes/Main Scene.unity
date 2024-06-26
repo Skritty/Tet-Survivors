@@ -187,25 +187,41 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
+      propertyPath: stats.damageMultiplier
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
+      propertyPath: abilities.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3fb68e844eaa70449a218ab23253978f, type: 2}
+    - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
       propertyPath: abilities.Array.data[5]
       value: 
-      objectReference: {fileID: 11400000, guid: 65c09eb1d26620f4ea5f618a1b410353, type: 2}
+      objectReference: {fileID: 11400000, guid: ac0aa19ad2e1fd149b68fa250d7ab34a, type: 2}
     - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
       propertyPath: abilities.Array.data[6]
       value: 
-      objectReference: {fileID: 11400000, guid: 6bdec27e768451646b2bbb33ebcb70df, type: 2}
+      objectReference: {fileID: 11400000, guid: 23087acab98a8b148914657ce4b9697d, type: 2}
     - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
       propertyPath: abilities.Array.data[7]
       value: 
-      objectReference: {fileID: 11400000, guid: 7a5179e3aca5006478c70a2331a56e34, type: 2}
+      objectReference: {fileID: 11400000, guid: 23087acab98a8b148914657ce4b9697d, type: 2}
     - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
       propertyPath: abilities.Array.data[8]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 23087acab98a8b148914657ce4b9697d, type: 2}
     - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
       propertyPath: abilities.Array.data[9]
       value: 
-      objectReference: {fileID: 11400000, guid: a8fbb132f68bda94f91e4187c2c2ca91, type: 2}
+      objectReference: {fileID: 11400000, guid: 23087acab98a8b148914657ce4b9697d, type: 2}
+    - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
+      propertyPath: abilities.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 23087acab98a8b148914657ce4b9697d, type: 2}
+    - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
+      propertyPath: abilities.Array.data[11]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8920718006239068618, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -429,6 +445,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 571155060}
     - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
+      propertyPath: globalTick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: abilityTree
       value: 
       objectReference: {fileID: 450988186}
@@ -436,6 +456,10 @@ PrefabInstance:
       propertyPath: waves.Array.size
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
+      propertyPath: firecrackerAbility
+      value: 
+      objectReference: {fileID: 11400000, guid: 3fb68e844eaa70449a218ab23253978f, type: 2}
     - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: waves.Array.data[0].endTick
       value: 1500
@@ -1600,6 +1624,10 @@ PrefabInstance:
     - target: {fileID: 8703707428719217332, guid: 789d2d6822f77fa488826daf6e58bbbc, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703707428719217332, guid: 789d2d6822f77fa488826daf6e58bbbc, type: 3}
+      propertyPath: globalTick
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8854838696168857421, guid: 789d2d6822f77fa488826daf6e58bbbc, type: 3}
       propertyPath: m_LocalPosition.x

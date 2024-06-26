@@ -61,7 +61,7 @@ MonoBehaviour:
       playingVFX: {fileID: 0}
     - damage:
         entitiesDamaged: 2
-        damageScale: 0.72
+        damageScale: 2
         knockbackPower: 0
         knockbackTickDuration: 0
         stunTickDuration: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
       SFX: {fileID: 0}
       playingVFX: {fileID: 0}
     - damage:
-        entitiesDamaged: 28
+        entitiesDamaged: 4
         damageScale: 0.3
         knockbackPower: 0
         knockbackTickDuration: 0
@@ -90,5 +90,21 @@ MonoBehaviour:
       selfSlowMultiDuringStage: 1
       VFX: {fileID: 7802850984575717093, guid: 139c3e50ea3291d4dac7d164820a21b4, type: 3}
       SFX: {fileID: 11400000, guid: 88d38d0cc8bf8ca408716950fb920501, type: 2}
+      playingVFX: {fileID: 0}
+    - damage:
+        entitiesDamaged: 24
+        damageScale: 3
+        knockbackPower: 0
+        knockbackTickDuration: 0
+        stunTickDuration: 0
+        slowMulti: 0
+        slowTickDuration: 0
+      tickDuration: 5
+      timesRepeated: 1
+      radius: 6
+      angleDegrees: 360
+      selfSlowMultiDuringStage: 1
+      VFX: {fileID: 0}
+      SFX: {fileID: 0}
       playingVFX: {fileID: 0}
     playing: 0

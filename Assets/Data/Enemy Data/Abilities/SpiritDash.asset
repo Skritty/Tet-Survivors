@@ -16,6 +16,7 @@ MonoBehaviour:
   unlockedOnObtain: []
   abilityName: Spirit Dash
   abilityDescription: 
+  resolveOrderModifier: 0
   temporary: 0
   enabled: 1
   activateOnSpawn: 0
@@ -25,5 +26,5 @@ MonoBehaviour:
   replaceAbility: {fileID: 0}
   mode: 2
   KBconstant: {x: 0, y: 0, z: 0}
-  KBPower: 0.2
-  KBDuration: 60
+  KBPower: 0.1
+  KBDuration: 120
