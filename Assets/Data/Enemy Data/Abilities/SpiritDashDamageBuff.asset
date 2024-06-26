@@ -16,6 +16,7 @@ MonoBehaviour:
   unlockedOnObtain: []
   abilityName: 
   abilityDescription: 
+  resolveOrderModifier: 0
   temporary: 0
   enabled: 1
   activateOnSpawn: 0
@@ -40,6 +41,8 @@ MonoBehaviour:
     totalDistanceTraveled: 0
     facing: {x: 0, y: 0}
     buffs: []
+    overrideDamageAllegience: 0
+    distanceMovedWithoutStopping: 0
     maxHealth: 0
     regeneration: 0
     cooldownReduction: 0
@@ -47,6 +50,8 @@ MonoBehaviour:
     movementScaling: 1
     areaScaling: 1
     expAttractScaling: 1
-    overrideDamageAllegience: 0
+    expGainScaling: 1
   combineMethod: 1
   tickDuration: 60
+  grantToOwnerInstead: 0
+  maxRangeToOwner: 0
