@@ -48,7 +48,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 10
   maximumPoolSize: 20
-  poolID: 63220
+  poolID: 26870
   prefab: {fileID: 2578186974715631107}
   OnGet:
     m_PersistentCalls:
@@ -66,11 +66,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1622502470485362193, guid: 3bca544d4866bfe4589979164f2d037b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1622502470485362193, guid: 3bca544d4866bfe4589979164f2d037b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622502470485362193, guid: 3bca544d4866bfe4589979164f2d037b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1622502470485362193, guid: 3bca544d4866bfe4589979164f2d037b, type: 3}
       propertyPath: m_LocalPosition.x
