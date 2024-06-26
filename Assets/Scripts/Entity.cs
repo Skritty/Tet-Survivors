@@ -261,7 +261,7 @@ public class Entity : PooledObject
             WhenHit.Invoke(this, source.owner);
             hitTriggeredThisTick = true;
         }
-        //Debug.Log($"{name} took {damage.damageScale} damage!");
+        Debug.Log($"{name} took {damage.damageScale} damage from {source.gameObject.name}");
         if(stats.currentHealth <= 0)
         {
             source.owner.OnKill.Invoke(source.owner, this); // owner inherits kills
