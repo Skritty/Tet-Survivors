@@ -518,7 +518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: waves.Array.data[0].spawns.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: waves.Array.data[4].spawns.Array.size
@@ -1006,7 +1006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: waves.Array.data[0].spawns.Array.data[3].spawnEveryXFrames
-      value: 1505
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: waves.Array.data[3].spawns.Array.data[5].spawnEveryXFrames

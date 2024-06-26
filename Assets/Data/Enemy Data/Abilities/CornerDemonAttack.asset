@@ -45,7 +45,7 @@ MonoBehaviour:
       playingVFX: {fileID: 0}
     - damage:
         entitiesDamaged: 2
-        damageScale: 0.01
+        damageScale: 0.02
         knockbackPower: 0
         knockbackTickDuration: 0
         stunTickDuration: 0
