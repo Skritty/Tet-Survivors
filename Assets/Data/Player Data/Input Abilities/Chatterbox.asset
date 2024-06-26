@@ -20,10 +20,11 @@ MonoBehaviour:
   resolveOrderModifier: 0
   temporary: 0
   enabled: 1
+  useAdvanceCooldown: 1
   activateOnSpawn: 0
   animationTrigger: Bite
   animationDuration: 0
-  cooldownTicks: 40
+  cooldownTicks: 45
   replaceAbility: {fileID: 11400000, guid: 84243deb8e6259d40854783fc296be62, type: 2}
   continuous: 0
   aoe:
@@ -36,7 +37,7 @@ MonoBehaviour:
         stunTickDuration: 0
         slowMulti: 0
         slowTickDuration: 0
-      tickDuration: 40
+      tickDuration: 30
       timesRepeated: 0
       radius: 3
       angleDegrees: 90

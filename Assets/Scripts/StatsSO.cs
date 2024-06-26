@@ -54,6 +54,7 @@ public class Stats
     public Dictionary<Ability, AoE> aoes;
     public EntityType overrideDamageAllegience;
     public float distanceMovedWithoutStopping;
+    public int advanceCooldown;
 
     [Header("Modifiable Stats")]
     public float maxHealth;
@@ -81,6 +82,7 @@ public class Stats
             stats.aoes = existing.aoes;
             stats.overrideDamageAllegience = existing.overrideDamageAllegience;
             stats.distanceMovedWithoutStopping = existing.distanceMovedWithoutStopping;
+            stats.advanceCooldown = existing.advanceCooldown;
         }
         else
         {
@@ -101,6 +103,7 @@ public class Stats
         movementScaling += other.movementScaling - 1;
         areaScaling += other.areaScaling - 1;
         expAttractScaling += other.expAttractScaling - 1;
+        expGainScaling += other.expGainScaling - 1;
     }
 
     public void StatCombineMultiplicative(Stats other)
@@ -112,6 +115,7 @@ public class Stats
         movementScaling *= other.movementScaling;
         areaScaling *= other.areaScaling;
         expAttractScaling *= other.expAttractScaling;
+        expGainScaling *= other.expGainScaling;
     }
 }
 

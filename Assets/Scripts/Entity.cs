@@ -23,7 +23,6 @@ public class Entity : PooledObject
     public UnityEvent<Entity, Entity> OnHit;
     public UnityEvent<Entity, Entity> OnKill;
     public UnityEvent<Entity, Entity> WhenHit;
-    private bool hitTriggeredThisTick;
     public UnityEvent<Entity> OnLevel;
 
     public bool IsStunned
@@ -146,7 +145,6 @@ public class Entity : PooledObject
     public void FixedUpdate()
     {
         currentTick++;
-        hitTriggeredThisTick = false;
         FixResolveOrder();
         CalculateStats();
         AbilityTriggers();
@@ -155,19 +153,22 @@ public class Entity : PooledObject
 
     private void FixResolveOrder()
     {
-        abilities.Sort(delegate (Ability x, Ability y)
+        foreach (Ability ability in abilities.ToArray())
         {
-            if (x.resolveOrderModifier == y.resolveOrderModifier) return 0;
-            else if (x.resolveOrderModifier > y.resolveOrderModifier) return -1;
-            else return 1;
-        });
-
-        stats.buffs.Sort(delegate (Buff x, Buff y)
+            if(ability.resolveOrderModifier < 0)
+            {
+                abilities.Remove(ability);
+                abilities.Add(ability);
+            }
+        }
+        foreach (Buff buff in stats.buffs.ToArray())
         {
-            if (x.combineMethod == y.combineMethod) return 0;
-            else if (x.combineMethod == StatCombineMethod.Multiplicative) return 1;
-            else return -1;
-        });
+            if(buff.combineMethod == StatCombineMethod.Multiplicative)
+            {
+                stats.buffs.Remove(buff);
+                stats.buffs.Add(buff);
+            }
+        }
     }
 
     protected virtual void CalculateStats()
@@ -255,11 +256,10 @@ public class Entity : PooledObject
             damage.damageScale = 0;
         }
         stats.currentHealth = Mathf.Clamp(stats.currentHealth - damage.damageScale, 0, stats.maxHealth);
-        if(damage.damageScale > 0 && !hitTriggeredThisTick)
+        if(damage.damageScale > 0)
         {
             source.OnHit.Invoke(source, this); // owner does not inherit hits
             WhenHit.Invoke(this, source.owner);
-            hitTriggeredThisTick = true;
         }
         Debug.Log($"{name} took {damage.damageScale} damage from {source.gameObject.name}");
         if(stats.currentHealth <= 0)

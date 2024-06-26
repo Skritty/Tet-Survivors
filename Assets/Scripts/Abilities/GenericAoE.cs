@@ -26,7 +26,7 @@ public class GenericAoE : Ability
         }
         else
         {
-            if (cooldownTicks == 0 || tick % (cooldownTicks / self.stats.cooldownReduction) < 1) CooldownActivation(self);
+            if (cooldownTicks == 0 || (tick + (useAdvanceCooldown ? self.stats.advanceCooldown : 0)) % (cooldownTicks / self.stats.cooldownReduction) < 1) CooldownActivation(self);
         }
     }
     public override void CooldownActivation(Entity self)

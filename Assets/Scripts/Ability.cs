@@ -14,6 +14,7 @@ public abstract class Ability : ScriptableObject
     public int resolveOrderModifier;
     public bool temporary;
     public bool enabled = true;
+    public bool useAdvanceCooldown = true;
     public bool activateOnSpawn;
     public string animationTrigger;
     public float animationDuration;
@@ -28,7 +29,7 @@ public abstract class Ability : ScriptableObject
     public virtual void CheckCooldownTrigger(int tick, Entity self)
     {
         if (self.IsStunned) return;
-        if (cooldownTicks == 0 || tick % (cooldownTicks / self.stats.cooldownReduction) < 1) CooldownActivation(self);
+        if (cooldownTicks == 0 || (tick + (useAdvanceCooldown ? self.stats.advanceCooldown : 0)) % (cooldownTicks / self.stats.cooldownReduction) < 1) CooldownActivation(self);
     }
     public virtual void CooldownActivation(Entity self) { }
     public virtual void CalculateStats(Entity self, Stats stats) { }

@@ -45,7 +45,7 @@ public class PlayerProximityTriggeredAttack : GenericAoE
         } 
         else 
         {
-            if (tick >= self.stats.activationTicks[this] + cooldownTicks)
+            if ((tick + (useAdvanceCooldown ? self.stats.advanceCooldown : 0)) >= self.stats.activationTicks[this] + cooldownTicks)
             {
                 CooldownActivation(self);
                 self.stats.activationTicks[this] = self.currentTick;

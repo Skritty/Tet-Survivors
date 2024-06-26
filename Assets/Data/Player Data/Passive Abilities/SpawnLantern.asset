@@ -17,8 +17,10 @@ MonoBehaviour:
   abilityName: Lantern
   abilityDescription: Create a lantern that follows you and deals damage and slows
     in an area.
+  resolveOrderModifier: 0
   temporary: 0
   enabled: 1
+  useAdvanceCooldown: 0
   activateOnSpawn: 1
   animationTrigger: 
   animationDuration: 0

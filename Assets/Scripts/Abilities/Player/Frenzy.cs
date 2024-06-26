@@ -8,20 +8,24 @@ public class Frenzy : Ability
     public int advanceCooldownOnKillAmount;
     public override void Initialize(Entity self)
     {
-        self.owner.OnKill.AddListener(AdvanceCooldowns);
+        self.OnKill.AddListener(AdvanceCooldowns);
     }
 
     public override void Cleanup(Entity self)
     {
-        self.owner.OnKill.RemoveListener(AdvanceCooldowns);
+        self.OnKill.RemoveListener(AdvanceCooldowns);
     }
 
     private void AdvanceCooldowns(Entity self, Entity other)
     {
         for(int i = 0; i < advanceCooldownOnKillAmount; i++)
         {
-            self.currentTick++;
-            self.AbilityTriggers();
+            self.stats.advanceCooldown++;
+            foreach (Ability ability in self.abilities)
+            {
+                if (!ability.useAdvanceCooldown) return;
+                ability.CheckCooldownTrigger(self.currentTick, self);
+            }
         }
     }
 }

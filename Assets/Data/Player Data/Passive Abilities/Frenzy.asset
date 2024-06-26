@@ -21,9 +21,10 @@ MonoBehaviour:
   resolveOrderModifier: 0
   temporary: 0
   enabled: 1
+  useAdvanceCooldown: 1
   activateOnSpawn: 0
   animationTrigger: 
   animationDuration: 0
   cooldownTicks: 0
   replaceAbility: {fileID: 0}
-  advanceCooldownOnKillAmount: 10
+  advanceCooldownOnKillAmount: 5
