@@ -16,6 +16,7 @@ MonoBehaviour:
   unlockedOnObtain: []
   abilityName: Lantern AoE
   abilityDescription: 
+  resolveOrderModifier: 0
   temporary: 0
   enabled: 1
   activateOnSpawn: 0
@@ -32,7 +33,7 @@ MonoBehaviour:
         knockbackPower: 0
         knockbackTickDuration: 0
         stunTickDuration: 0
-        slowMulti: 0.6
+        slowMulti: 1
         slowTickDuration: 5
       tickDuration: 5
       timesRepeated: 0
@@ -40,4 +41,6 @@ MonoBehaviour:
       angleDegrees: 360
       selfSlowMultiDuringStage: 1
       VFX: {fileID: 3037709805694734267, guid: a0444bc16f9d9e747a1320e753fa8268, type: 3}
+      SFX: {fileID: 0}
+      playingVFX: {fileID: 0}
     playing: 0

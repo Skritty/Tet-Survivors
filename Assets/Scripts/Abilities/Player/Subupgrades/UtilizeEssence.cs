@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UtilizeEssence : MonoBehaviour
+[CreateAssetMenu(menuName = "Abilities/Player/UtilizeEssence")]
+public class UtilizeEssence : Ability
 {
-    // Start is called before the first frame update
-    void Start()
+    public Stats statBuff;
+    public override void CooldownActivation(Entity self)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        self.owner.stats.buffs.Add(new Buff(BuffType.Stat, cooldownTicks, 1, self, statBuff: statBuff));
     }
 }

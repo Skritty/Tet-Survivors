@@ -2,17 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Subjugation : MonoBehaviour
+[CreateAssetMenu(menuName = "Abilities/Player/Subjugation")]
+public class Subjugation : Ability
 {
-    // Start is called before the first frame update
-    void Start()
+    public int killsNeededToActivate;
+    public Ability toActivate;
+    public override void Initialize(Entity self)
     {
-        
+        self.stats.activationTicks.Add(this, 0);
+        self.OnKill.AddListener(OnKill);
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Cleanup(Entity self)
     {
-        
+        self.OnKill.RemoveListener(OnKill);
+    }
+
+    private void OnKill(Entity self, Entity other)
+    {
+        self.stats.activationTicks[this]++;
+        if (killsNeededToActivate >= self.stats.activationTicks[this])
+        {
+            toActivate.CooldownActivation(self);
+        }
     }
 }

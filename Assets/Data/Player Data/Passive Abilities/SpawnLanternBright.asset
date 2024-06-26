@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a0a75c78bf31749a1f2fefdb34a124, type: 3}
+  m_Name: SpawnLanternBright
+  m_EditorClassIdentifier: 
+  removeFromTreeOnUnlock: 1
+  unlockedOnObtain: []
+  abilityName: Blinding Radiance
+  abilityDescription: Your lantern heavily slows all enemies in its area.
+  resolveOrderModifier: 0
+  temporary: 0
+  enabled: 1
+  activateOnSpawn: 1
+  animationTrigger: 
+  animationDuration: 0
+  cooldownTicks: 99999999
+  replaceAbility: {fileID: 11400000, guid: 453301514409c83438c86b412e2fe3f8, type: 2}
+  proxy: {fileID: 2230100937696556298, guid: 771899fa3e4bc6245b7625eca30f03bd, type: 3}
+  slowOnSpawnMulti: 0
+  slowOnSpawnTickDuration: 0
+  removeAfterTicks: 99999999

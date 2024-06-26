@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c9b2f1fb4b792b4b8ab49f667d8b8a1, type: 3}
+  m_Name: SubjugationSpiritCharm
+  m_EditorClassIdentifier: 
+  removeFromTreeOnUnlock: 1
+  unlockedOnObtain: []
+  abilityName: Subjugation
+  abilityDescription: Every 10 kills, charm a nearby spirit.
+  resolveOrderModifier: 0
+  temporary: 0
+  enabled: 1
+  activateOnSpawn: 0
+  animationTrigger: 
+  animationDuration: 0
+  cooldownTicks: 0
+  replaceAbility: {fileID: 0}
+  killsNeededToActivate: 10
+  toActivate: {fileID: 11400000, guid: 7a5179e3aca5006478c70a2331a56e34, type: 2}
