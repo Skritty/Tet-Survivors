@@ -15,13 +15,14 @@ MonoBehaviour:
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
   abilityName: Devour
-  abilityDescription: Gain 1 health when you kill an enemy.
+  abilityDescription: Gain 0.5 health when you kill an enemy.
   resolveOrderModifier: 0
   temporary: 0
   enabled: 1
+  useAdvanceCooldown: 1
   activateOnSpawn: 0
   animationTrigger: 
   animationDuration: 0
   cooldownTicks: 0
   replaceAbility: {fileID: 0}
-  lifeGainOnKill: 1
+  lifeGainOnKill: 0.5
