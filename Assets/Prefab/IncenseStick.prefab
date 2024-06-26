@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 3dc6d1135a4a6cb4f9f56bd99cc40c8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 10
   maximumPoolSize: 20
-  poolID: 41328
+  poolID: 72952
   prefab: {fileID: 9106856118509931958}
   OnGet:
     m_PersistentCalls:
@@ -161,6 +161,9 @@ MonoBehaviour:
     totalDistanceTraveled: 0
     facing: {x: 0, y: 0}
     buffs: []
+    overrideDamageAllegience: 0
+    distanceMovedWithoutStopping: 0
+    advanceCooldown: 0
     maxHealth: 0
     regeneration: 0
     cooldownReduction: 1
@@ -169,8 +172,6 @@ MonoBehaviour:
     areaScaling: 1
     expAttractScaling: 1
     expGainScaling: 1
-    overrideDamageAllegience: 0
-    distanceMovedWithoutStopping: 0
   currentTick: 0
   abilities:
   - {fileID: 11400000, guid: e78e07f7e9ba3234aa794ff2130464aa, type: 2}
@@ -205,7 +206,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 10
   maximumPoolSize: 20
-  poolID: 41328
+  poolID: 72952
   prefab: {fileID: 0}
   OnGet:
     m_PersistentCalls:

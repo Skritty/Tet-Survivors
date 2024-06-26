@@ -48,7 +48,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 10
   maximumPoolSize: 10000
-  poolID: 61286
+  poolID: 72900
   prefab: {fileID: 1430088621463845227}
   OnGet:
     m_PersistentCalls:
@@ -61,7 +61,7 @@ MonoBehaviour:
   baseStats: {fileID: 11400000, guid: 6476535137b29d44ea693b3b27d05941, type: 2}
   stats:
     allegience: 0
-    expDropped: 0
+    expDropped: -1
     expLevelCurve:
       serializedVersion: 2
       m_Curve: []
@@ -76,6 +76,9 @@ MonoBehaviour:
     totalDistanceTraveled: 0
     facing: {x: 0, y: 0}
     buffs: []
+    overrideDamageAllegience: 0
+    distanceMovedWithoutStopping: 0
+    advanceCooldown: 0
     maxHealth: 0
     regeneration: 0
     cooldownReduction: 0
@@ -83,9 +86,24 @@ MonoBehaviour:
     movementScaling: 1
     areaScaling: 1
     expAttractScaling: 1
-    overrideDamageAllegience: 0
+    expGainScaling: 1
   currentTick: 0
   abilities: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnKill:
+    m_PersistentCalls:
+      m_Calls: []
+  WhenHit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLevel:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5744264988412662899
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +187,10 @@ PrefabInstance:
     - target: {fileID: 2185957327108313131, guid: 77dce0b76def32142a128b341f6eb9be, type: 3}
       propertyPath: m_Name
       value: SoulParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799623950910753223, guid: 77dce0b76def32142a128b341f6eb9be, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4065690928910796341, guid: 77dce0b76def32142a128b341f6eb9be, type: 3}
       propertyPath: prewarm

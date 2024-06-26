@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: 2bb90892ecab5524ebc9c96f75a85c8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 1
   maximumPoolSize: 20
-  poolID: 29088
+  poolID: 74390
   prefab: {fileID: 2373308955059772829}
   OnGet:
     m_PersistentCalls:
@@ -160,15 +160,34 @@ MonoBehaviour:
     totalDistanceTraveled: 0
     facing: {x: 0, y: 0}
     buffs: []
+    overrideDamageAllegience: 0
+    distanceMovedWithoutStopping: 0
+    advanceCooldown: 0
     maxHealth: 0
+    regeneration: 0
     cooldownReduction: 0
     damageMultiplier: 1
     movementScaling: 1
     areaScaling: 1
     expAttractScaling: 1
-    overrideDamageAllegience: 0
+    expGainScaling: 1
   currentTick: 0
   abilities:
   - {fileID: 11400000, guid: 3cf44360175e704448b6af229881b7f6, type: 2}
   - {fileID: 11400000, guid: 364f75810ea1cb54780749b34efb8f4c, type: 2}
   - {fileID: 11400000, guid: 6b7e426e9b667c44687bb42ef0121b6a, type: 2}
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnKill:
+    m_PersistentCalls:
+      m_Calls: []
+  WhenHit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLevel:
+    m_PersistentCalls:
+      m_Calls: []

@@ -49,7 +49,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 10
   maximumPoolSize: 20
-  poolID: 58988
+  poolID: 72978
   prefab: {fileID: 7681107302195517049}
   OnGet:
     m_PersistentCalls:
@@ -79,6 +79,7 @@ MonoBehaviour:
     buffs: []
     overrideDamageAllegience: 0
     distanceMovedWithoutStopping: 0
+    advanceCooldown: 0
     maxHealth: 0
     regeneration: 0
     cooldownReduction: 1
@@ -120,7 +121,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 10
   maximumPoolSize: 20
-  poolID: 58988
+  poolID: 72978
   prefab: {fileID: 0}
   OnGet:
     m_PersistentCalls:
@@ -200,7 +201,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: a8a1b9ea94481cc4591fcdb9a1c594c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

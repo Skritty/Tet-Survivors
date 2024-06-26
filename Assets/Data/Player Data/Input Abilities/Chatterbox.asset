@@ -24,7 +24,7 @@ MonoBehaviour:
   activateOnSpawn: 0
   animationTrigger: Bite
   animationDuration: 0
-  cooldownTicks: 45
+  cooldownTicks: 50
   replaceAbility: {fileID: 11400000, guid: 84243deb8e6259d40854783fc296be62, type: 2}
   continuous: 0
   aoe:

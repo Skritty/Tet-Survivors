@@ -18,7 +18,7 @@ public class InputTrigger : Ability
     public override void CheckCooldownTrigger(int tick, Entity self)
     {
         if (self.IsStunned) return;
-        if ((tick + (useAdvanceCooldown ? self.stats.advanceCooldown : 0)) > GameManager.Instance.inputBlockTick && tick >= self.stats.activationTicks[this] + cooldownTicks) CooldownActivation(self);
+        if (tick > GameManager.Instance.inputBlockTick && (tick + (useAdvanceCooldown ? self.stats.advanceCooldown : 0)) >= self.stats.activationTicks[this] + cooldownTicks) CooldownActivation(self);
     }
 
     public override void CooldownActivation(Entity self)
