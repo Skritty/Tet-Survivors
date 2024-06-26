@@ -2,11 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Linq;
-using UnityEditor.Experimental.GraphView;
 
 public class Entity : PooledObject
 {

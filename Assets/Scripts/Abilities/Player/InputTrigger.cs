@@ -25,7 +25,7 @@ public class InputTrigger : Ability
     {
         if (Input.GetKey(key))
         {
-            if(abilityName == "Firecracker" || abilityName == "Utilize Essence")
+            if(abilityName == "Firecracker" || abilityName == "Violent Firecracker")
             {
                 // This is NOT the correct way to do things
                 GameManager.Instance.OnFirecrackerUsed();

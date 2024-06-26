@@ -16,14 +16,16 @@ MonoBehaviour:
   unlockedOnObtain: []
   abilityName: 
   abilityDescription: 
+  resolveOrderModifier: 0
   temporary: 0
   enabled: 1
+  useAdvanceCooldown: 1
   activateOnSpawn: 0
   animationTrigger: 
   animationDuration: 0
-  cooldownTicks: 0
+  cooldownTicks: 5
   replaceAbility: {fileID: 0}
-  continuous: 1
+  continuous: 0
   aoe:
     stages:
     - damage:
@@ -32,15 +34,16 @@ MonoBehaviour:
         knockbackPower: 0
         knockbackTickDuration: 0
         stunTickDuration: 0
-        slowMulti: 0.5
+        slowMulti: 0.6
         slowTickDuration: 5
       tickDuration: 5
-      timesRepeated: 5
+      timesRepeated: 0
       radius: 0.4
       angleDegrees: 360
-      selfSlowMultiDuringStage: 0
+      selfSlowMultiDuringStage: 2
       VFX: {fileID: 226441755389822861, guid: b55ceae625ced65408252847d671f9de, type: 3}
+      SFX: {fileID: 0}
       playingVFX: {fileID: 0}
     playing: 0
-  activationDistance: 0
+  activationDistance: 0.4
   targetType: 2

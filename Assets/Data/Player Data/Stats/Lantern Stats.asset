@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lantern Stats
   m_EditorClassIdentifier: 
   stats:
-    allegience: 1
+    allegience: 0
     expDropped: 0
     expLevelCurve:
       serializedVersion: 2
@@ -29,6 +29,9 @@ MonoBehaviour:
     totalDistanceTraveled: 0
     facing: {x: 0, y: 0}
     buffs: []
+    overrideDamageAllegience: 0
+    distanceMovedWithoutStopping: 0
+    advanceCooldown: 0
     maxHealth: 999999
     regeneration: 0
     cooldownReduction: 1
@@ -36,4 +39,4 @@ MonoBehaviour:
     movementScaling: 1
     areaScaling: 1
     expAttractScaling: 1
-    overrideDamageAllegience: 0
+    expGainScaling: 1

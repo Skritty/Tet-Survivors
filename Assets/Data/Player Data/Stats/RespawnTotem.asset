@@ -29,7 +29,10 @@ MonoBehaviour:
     totalDistanceTraveled: 0
     facing: {x: 0, y: 0}
     buffs: []
-    maxHealth: 1000
+    overrideDamageAllegience: 0
+    distanceMovedWithoutStopping: 0
+    advanceCooldown: 0
+    maxHealth: 600
     regeneration: 0
     cooldownReduction: 1
     damageMultiplier: 0
@@ -37,5 +40,3 @@ MonoBehaviour:
     areaScaling: 0
     expAttractScaling: 0
     expGainScaling: 1
-    overrideDamageAllegience: 0
-    distanceMovedWithoutStopping: 0
