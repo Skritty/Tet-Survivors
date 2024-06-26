@@ -16,6 +16,7 @@ MonoBehaviour:
   unlockedOnObtain: []
   abilityName: Corner Demon Attack
   abilityDescription: 
+  resolveOrderModifier: 0
   temporary: 0
   enabled: 1
   activateOnSpawn: 0
@@ -40,6 +41,8 @@ MonoBehaviour:
       angleDegrees: 0
       selfSlowMultiDuringStage: 1
       VFX: {fileID: 0}
+      SFX: {fileID: 0}
+      playingVFX: {fileID: 0}
     - damage:
         entitiesDamaged: 2
         damageScale: 0.01
@@ -54,5 +57,8 @@ MonoBehaviour:
       angleDegrees: 360
       selfSlowMultiDuringStage: 1
       VFX: {fileID: 1574698528215790628, guid: 54fb8fa7fbd3ecb4f8b5d5838451145f, type: 3}
+      SFX: {fileID: 0}
+      playingVFX: {fileID: 0}
     playing: 1
   activationDistance: 5
+  targetType: 2

@@ -63,6 +63,7 @@ public class LevelUpScreen : MonoBehaviour
 
     private void CloseUI()
     {
+        GameManager.Instance.inputBlockTick = GameManager.Instance.inputBlockTick + 5;
         Time.timeScale = 1;
         gameObject.SetActive(false);
     }

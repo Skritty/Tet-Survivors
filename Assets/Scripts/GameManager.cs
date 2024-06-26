@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     public float spawnRadius;
     public List<Wave> waves = new List<Wave>();
     private int globalTick;
+    [HideInInspector]
+    public int inputBlockTick;
 
     [Serializable]
     public class Wave
