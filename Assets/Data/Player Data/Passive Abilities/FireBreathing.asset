@@ -16,8 +16,10 @@ MonoBehaviour:
   unlockedOnObtain: []
   abilityName: Fire Breathing
   abilityDescription: Spew fire in a cone in front of you every few seconds.
+  resolveOrderModifier: 0
   temporary: 0
   enabled: 1
+  useAdvanceCooldown: 1
   activateOnSpawn: 0
   animationTrigger: 
   animationDuration: 0
@@ -28,7 +30,7 @@ MonoBehaviour:
     stages:
     - damage:
         entitiesDamaged: 28
-        damageScale: 0.1
+        damageScale: 0.2
         knockbackPower: 0
         knockbackTickDuration: 0
         stunTickDuration: 0

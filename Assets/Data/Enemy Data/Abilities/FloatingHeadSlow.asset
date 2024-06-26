@@ -40,7 +40,7 @@ MonoBehaviour:
       timesRepeated: 0
       radius: 0.4
       angleDegrees: 360
-      selfSlowMultiDuringStage: 2
+      selfSlowMultiDuringStage: 0.8
       VFX: {fileID: 226441755389822861, guid: b55ceae625ced65408252847d671f9de, type: 3}
       SFX: {fileID: 0}
       playingVFX: {fileID: 0}

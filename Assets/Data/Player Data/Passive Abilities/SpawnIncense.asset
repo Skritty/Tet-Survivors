@@ -27,5 +27,5 @@ MonoBehaviour:
   cooldownTicks: 0
   replaceAbility: {fileID: 0}
   proxy: {fileID: 6059882002246456011, guid: d40e5671d5ed35143bbed08888cdf13d, type: 3}
-  procChance: 0.05
+  procChance: 0.075
   removeAfterTicks: 1000

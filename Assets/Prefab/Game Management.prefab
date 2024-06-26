@@ -872,6 +872,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3355095302363929738}
+    - target: {fileID: 2211431389437103394, guid: ad24e3e4c09358140856120d748b1100, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitGame
+      objectReference: {fileID: 0}
     - target: {fileID: 4944194388607989092, guid: ad24e3e4c09358140856120d748b1100, type: 3}
       propertyPath: m_Name
       value: Main Menu

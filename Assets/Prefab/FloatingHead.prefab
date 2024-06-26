@@ -154,7 +154,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 10
   maximumPoolSize: 2000
-  poolID: 26892
+  poolID: 71564
   prefab: {fileID: 5667794634927703424}
   OnGet:
     m_PersistentCalls:
@@ -182,6 +182,9 @@ MonoBehaviour:
     totalDistanceTraveled: 0
     facing: {x: 0, y: 0}
     buffs: []
+    overrideDamageAllegience: 3
+    distanceMovedWithoutStopping: 0
+    advanceCooldown: 0
     maxHealth: 0
     regeneration: 0
     cooldownReduction: 0
@@ -189,10 +192,24 @@ MonoBehaviour:
     movementScaling: 1
     areaScaling: 1
     expAttractScaling: 1
-    overrideDamageAllegience: 3
+    expGainScaling: 1
   currentTick: 0
   abilities:
   - {fileID: 11400000, guid: 18ae87d625343b14d8d850bafddc04a0, type: 2}
   - {fileID: 11400000, guid: 306a763f713f5664385d0e1181006697, type: 2}
   - {fileID: 11400000, guid: 472673f3f67111f408ca1776c5d3077f, type: 2}
-  - {fileID: 11400000, guid: d8fb7800fb241994fb057d5843dcdfb8, type: 2}
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnKill:
+    m_PersistentCalls:
+      m_Calls: []
+  WhenHit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLevel:
+    m_PersistentCalls:
+      m_Calls: []

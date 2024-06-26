@@ -15,14 +15,16 @@ MonoBehaviour:
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
   abilityName: Fruit Offering
-  abilityDescription: Spirits take high damage over time when they hit you.
+  abilityDescription: Every 5 seconds, the next spirit that hits you takes high damage
+    over time.
   resolveOrderModifier: 0
   temporary: 0
   enabled: 1
+  useAdvanceCooldown: 1
   activateOnSpawn: 0
   animationTrigger: 
   animationDuration: 0
-  cooldownTicks: 0
+  cooldownTicks: 250
   replaceAbility: {fileID: 0}
-  damagePerTick: 0.2
+  damagePerTick: 0.25
   tickDuration: 250

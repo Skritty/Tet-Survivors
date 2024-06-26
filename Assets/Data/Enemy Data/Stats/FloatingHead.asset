@@ -21,8 +21,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    baseDamage: 10
-    baseMovementSpeed: 0.8
+    baseDamage: 1
+    baseMovementSpeed: 2
     level: 1
     currentExp: 0
     currentHealth: 15

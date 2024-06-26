@@ -101,7 +101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2075104081550195209
 Transform:
   m_ObjectHideFlags: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 10
   maximumPoolSize: 20
-  poolID: 72952
+  poolID: 83080
   prefab: {fileID: 9106856118509931958}
   OnGet:
     m_PersistentCalls:
@@ -206,7 +206,7 @@ MonoBehaviour:
   renderers: []
   initialPoolSize: 10
   maximumPoolSize: 20
-  poolID: 72952
+  poolID: 83080
   prefab: {fileID: 0}
   OnGet:
     m_PersistentCalls:

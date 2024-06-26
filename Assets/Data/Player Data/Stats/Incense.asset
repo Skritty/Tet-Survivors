@@ -32,7 +32,7 @@ MonoBehaviour:
     overrideDamageAllegience: 0
     distanceMovedWithoutStopping: 0
     advanceCooldown: 0
-    maxHealth: 120
+    maxHealth: 25
     regeneration: 0
     cooldownReduction: 1
     damageMultiplier: 0
