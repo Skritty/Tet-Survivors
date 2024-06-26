@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removeFromTreeOnUnlock: 1
   unlockedOnObtain:
-  - {fileID: 11400000, guid: a1bac5782fb81434980831f7a73391d1, type: 2}
+  - {fileID: 11400000, guid: ad27f8b201476164287f6d5fe6482dde, type: 2}
   - {fileID: 11400000, guid: b8af5cbf6cc8944459702ef117ca7926, type: 2}
   abilityName: Spirit Medium
   abilityDescription: Charms a spirit enemy to fight for you. The charmed enemy takes

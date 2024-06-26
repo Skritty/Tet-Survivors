@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     public List<Entity> entities = new List<Entity>();
     public float spawnRadius;
     public List<Wave> waves = new List<Wave>();
-    private int globalTick;
+    public int globalTick;
     [HideInInspector]
     public int inputBlockTick;
 

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b37695b59737c5640b9d8c585974d0ad, type: 3}
+  m_Name: UtilizeEssence
+  m_EditorClassIdentifier: 
+  removeFromTreeOnUnlock: 1
+  unlockedOnObtain: []
+  abilityName: Utilize Essence
+  abilityDescription: Spirit Medium now charms 2 spirits at a time. Charmed spirits
+    each grant you a minor stacking buff to most stats.
+  resolveOrderModifier: 0
+  temporary: 0
+  enabled: 1
+  activateOnSpawn: 0
+  animationTrigger: 
+  animationDuration: 0
+  cooldownTicks: 700
+  replaceAbility: {fileID: 0}
+  radius: 9
+  amountToCharm: 2
+  allyStatBuff: {fileID: 11400000, guid: a1bac5782fb81434980831f7a73391d1, type: 2}
+  targetType: 4
+  newAllegience: 2
+  damages: 28

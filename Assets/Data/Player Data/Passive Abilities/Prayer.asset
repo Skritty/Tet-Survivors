@@ -16,7 +16,7 @@ MonoBehaviour:
   unlockedOnObtain:
   - {fileID: 11400000, guid: 8fae597162a97194ca959b9543a116f6, type: 2}
   abilityName: Prayer
-  abilityDescription: Gain massive health regeneration after standing still for 3
+  abilityDescription: Gain massive health regeneration after standing still for 2
     seconds. Unlocks passive health regen upgrades.
   resolveOrderModifier: 0
   temporary: 0

@@ -173,20 +173,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
       propertyPath: abilities.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
       propertyPath: abilities.Array.data[5]
       value: 
-      objectReference: {fileID: 11400000, guid: 4e3fea10ed51f464cab2b535ca1069e4, type: 2}
+      objectReference: {fileID: 11400000, guid: ad27f8b201476164287f6d5fe6482dde, type: 2}
     - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
       propertyPath: abilities.Array.data[6]
       value: 
-      objectReference: {fileID: 11400000, guid: 453301514409c83438c86b412e2fe3f8, type: 2}
+      objectReference: {fileID: 11400000, guid: 52c0252502393f84b85c761558d7c73f, type: 2}
     - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
       propertyPath: abilities.Array.data[7]
       value: 
-      objectReference: {fileID: 11400000, guid: 453301514409c83438c86b412e2fe3f8, type: 2}
+      objectReference: {fileID: 11400000, guid: 52c0252502393f84b85c761558d7c73f, type: 2}
     - target: {fileID: 8920718006239068618, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
       propertyPath: m_Name
       value: Player

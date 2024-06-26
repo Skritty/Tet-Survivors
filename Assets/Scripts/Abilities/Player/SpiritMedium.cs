@@ -21,8 +21,9 @@ public class SpiritMedium : Ability
             if ((target.transform.position - self.transform.position).magnitude > radius) continue;
             picks.Add(target);
         }
-        if (picks.Count == 0) return;
-        for(int i = 0; i < amountToCharm; i++)
+        int toCharm = amountToCharm;
+        if (picks.Count < amountToCharm) toCharm = picks.Count;
+        for(int i = 0; i < toCharm; i++)
         {
             Entity charm = picks[Random.Range(0, picks.Count)];
             picks.Remove(charm);

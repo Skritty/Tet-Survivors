@@ -52,7 +52,9 @@ public class Stats
     //[HideInInspector]
     public Dictionary<Ability, int> activationTicks; // For abilities that don't trigger repeatedly, and buff/debuff durations
     public Dictionary<Ability, AoE> aoes;
-    
+    public EntityType overrideDamageAllegience;
+    public float distanceMovedWithoutStopping;
+
     [Header("Modifiable Stats")]
     public float maxHealth;
     public float regeneration;
@@ -62,8 +64,6 @@ public class Stats
     public float areaScaling = 1;
     public float expAttractScaling = 1;
     public float expGainScaling = 1;
-    public EntityType overrideDamageAllegience;
-    public float distanceMovedWithoutStopping;
 
     public Stats CreateCopy(Stats existing)
     {
@@ -81,7 +81,6 @@ public class Stats
             stats.aoes = existing.aoes;
             stats.overrideDamageAllegience = existing.overrideDamageAllegience;
             stats.distanceMovedWithoutStopping = existing.distanceMovedWithoutStopping;
-            stats.expGainScaling = existing.expGainScaling;
         }
         else
         {
