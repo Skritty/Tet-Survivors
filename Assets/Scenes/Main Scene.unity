@@ -189,7 +189,7 @@ PrefabInstance:
     - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
       propertyPath: abilities.Array.data[5]
       value: 
-      objectReference: {fileID: 11400000, guid: 6bdec27e768451646b2bbb33ebcb70df, type: 2}
+      objectReference: {fileID: 11400000, guid: 65c09eb1d26620f4ea5f618a1b410353, type: 2}
     - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
       propertyPath: abilities.Array.data[6]
       value: 
@@ -438,7 +438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: waves.Array.data[0].endTick
-      value: 1000
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: waves.Array.data[1].endTick
@@ -518,7 +518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: waves.Array.data[0].spawns.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3355095302363929738, guid: 8785d0966bae0cd408db2fe4f38a98f7, type: 3}
       propertyPath: waves.Array.data[4].spawns.Array.size
