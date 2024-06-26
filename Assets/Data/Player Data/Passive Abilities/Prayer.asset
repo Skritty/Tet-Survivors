@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28bf35d4a0ba0d64ca6f9937199b192f, type: 3}
+  m_Name: Prayer
+  m_EditorClassIdentifier: 
+  removeFromTreeOnUnlock: 1
+  unlockedOnObtain:
+  - {fileID: 11400000, guid: 8fae597162a97194ca959b9543a116f6, type: 2}
+  abilityName: Prayer
+  abilityDescription: Gain massive health regeneration after standing still for 3
+    seconds. Unlocks passive health regen upgrades.
+  resolveOrderModifier: 0
+  temporary: 0
+  enabled: 1
+  activateOnSpawn: 0
+  animationTrigger: 
+  animationDuration: 0
+  cooldownTicks: 100
+  replaceAbility: {fileID: 0}
+  regenerationPerTick: 0.1

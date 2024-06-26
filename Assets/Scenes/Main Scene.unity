@@ -189,11 +189,11 @@ PrefabInstance:
     - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
       propertyPath: abilities.Array.data[5]
       value: 
-      objectReference: {fileID: 11400000, guid: 95c3d10405bb92b49a21202aec0c411c, type: 2}
+      objectReference: {fileID: 11400000, guid: 6bdec27e768451646b2bbb33ebcb70df, type: 2}
     - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
       propertyPath: abilities.Array.data[6]
       value: 
-      objectReference: {fileID: 11400000, guid: a8fbb132f68bda94f91e4187c2c2ca91, type: 2}
+      objectReference: {fileID: 11400000, guid: 6bdec27e768451646b2bbb33ebcb70df, type: 2}
     - target: {fileID: 8790986704367211760, guid: caf4d68c5da2b6c458bdb137be660b8b, type: 3}
       propertyPath: abilities.Array.data[7]
       value: 

@@ -13,6 +13,10 @@ public class GenericAoE : Ability
         self.stats.aoes.Add(this, aoe.CreateClone());
         base.Initialize(self);
     }
+    public override void Cleanup(Entity self)
+    {
+        self.stats.aoes[this].StopAllFX();
+    }
     public override void CheckCooldownTrigger(int tick, Entity self)
     {
         if (self.IsStunned) return;

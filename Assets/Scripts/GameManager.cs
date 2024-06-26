@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
         previousLevelUpExp = nextLevelUpExp;
         if(player.baseStats.stats.expLevelCurve.keys[player.baseStats.stats.expLevelCurve.keys.Length-1].time > previousLevelUpExp)
         {
-            for (int i = player.stats.currentExp; i < player.baseStats.stats.expLevelCurve.keys[player.baseStats.stats.expLevelCurve.keys.Length-1].time; i++)
+            for (int i = (int)player.stats.currentExp; i < player.baseStats.stats.expLevelCurve.keys[player.baseStats.stats.expLevelCurve.keys.Length-1].time; i++)
             {
                 if((int)player.stats.expLevelCurve.Evaluate(i) > player.stats.level)
                 {

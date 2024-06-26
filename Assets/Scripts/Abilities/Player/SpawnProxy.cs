@@ -16,9 +16,10 @@ public class SpawnProxy : Ability
         {
             self.stats.buffs.Add(new Buff(BuffType.Slow, slowOnSpawnTickDuration, slowOnSpawnMulti, self));
         }
-        Entity entity = proxy.RequestObject().GetComponent<Entity>();
+        Entity entity = proxy.RequestObject(false).GetComponent<Entity>();
         entity.owner = self;
         entity.transform.position = self.transform.position;
+        entity.gameObject.SetActive(true);
         PlayAnimation(self);
 
         if (removeAfterTicks > 0)

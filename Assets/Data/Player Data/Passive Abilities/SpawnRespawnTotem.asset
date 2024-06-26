@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a0a75c78bf31749a1f2fefdb34a124, type: 3}
+  m_Name: SpawnRespawnTotem
+  m_EditorClassIdentifier: 
+  removeFromTreeOnUnlock: 1
+  unlockedOnObtain: []
+  abilityName: Repsawn Shrine
+  abilityDescription: Places a shrine when you get this ability. The first time you
+    would die, instead teleport to the shrine and heal to 50% health.
+  resolveOrderModifier: 0
+  temporary: 0
+  enabled: 1
+  activateOnSpawn: 1
+  animationTrigger: 
+  animationDuration: 0
+  cooldownTicks: 999999999
+  replaceAbility: {fileID: 0}
+  proxy: {fileID: 1667194021457345186, guid: 250ea6b8a62ea8f488ed3c22a8fcf960, type: 3}
+  slowOnSpawnMulti: 0
+  slowOnSpawnTickDuration: 0
+  removeAfterTicks: -1

@@ -9,11 +9,18 @@ public class StatBuff : Ability
     public Stats statsToBuff;
     public StatCombineMethod combineMethod;
     public int tickDuration = -1; // -1 is infinite
+    public bool grantToOwnerInstead;
+    public int maxRangeToOwner;
 
     public override void CooldownActivation(Entity self)
     {
         if (tickDuration > 0)
         {
+            if (grantToOwnerInstead)
+            {
+                if ((self.owner.transform.position - self.transform.position).magnitude > maxRangeToOwner) return;
+                self = self.owner;
+            }
             self.stats.buffs.Add(new Buff(BuffType.Stat, tickDuration, 0, self, statBuff: statsToBuff, combineMethod: combineMethod));
         }
     }
@@ -22,6 +29,11 @@ public class StatBuff : Ability
     {
         if(tickDuration < 0)
         {
+            if (grantToOwnerInstead)
+            {
+                if ((self.owner.transform.position - self.transform.position).magnitude > maxRangeToOwner) return;
+                self = self.owner;
+            }
             switch (combineMethod)
             {
                 case StatCombineMethod.Additive:

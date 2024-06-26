@@ -5,6 +5,8 @@ using Unity.Collections;
 using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Linq;
+using UnityEditor.Experimental.GraphView;
 
 public class Entity : PooledObject
 {
@@ -18,10 +20,11 @@ public class Entity : PooledObject
     public List<Ability> abilities;
 
     public UnityEvent<Entity> OnDeath;
-    public UnityEvent<Entity> OnHit;
-    public UnityEvent<Entity> WhenHit;
+    public UnityEvent<Entity, Entity> OnHit;
+    public UnityEvent<Entity, Entity> OnKill;
+    public UnityEvent<Entity, Entity> WhenHit;
     private bool hitTriggeredThisTick;
-    public UnityEvent OnLevel;
+    public UnityEvent<Entity> OnLevel;
 
     public bool IsStunned
     {
@@ -30,6 +33,21 @@ public class Entity : PooledObject
             foreach(Buff buff in stats.buffs)
             {
                 if(buff.type == BuffType.Stun)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+    public bool HasIFrames
+    {
+        get
+        {
+            foreach (Buff buff in stats.buffs)
+            {
+                if (buff.type == BuffType.iFrames)
                 {
                     return true;
                 }
@@ -98,13 +116,22 @@ public class Entity : PooledObject
     protected void OnDisable()
     {
         GameManager.Instance.entities.Remove(this);
+        foreach (Ability a in abilities.ToArray())
+        {
+            a.Cleanup(this);
+        }
+        owner = this;
     }
 
     public virtual void Initialize()
     {
         foreach(Ability a in abilities.ToArray())
         {
-            if (a.temporary) abilities.Remove(a);
+            if (a.temporary)
+            {
+                abilities.Remove(a);
+            }
+            
         }
         stats = baseStats.FetchStats();
         CalculateStats();
@@ -120,9 +147,27 @@ public class Entity : PooledObject
     {
         currentTick++;
         hitTriggeredThisTick = false;
+        FixResolveOrder();
         CalculateStats();
         AbilityTriggers();
         BuffDecrement();
+    }
+
+    private void FixResolveOrder()
+    {
+        abilities.Sort(delegate (Ability x, Ability y)
+        {
+            if (x.resolveOrderModifier == y.resolveOrderModifier) return 0;
+            else if (x.resolveOrderModifier > y.resolveOrderModifier) return -1;
+            else return 1;
+        });
+
+        stats.buffs.Sort(delegate (Buff x, Buff y)
+        {
+            if (x.combineMethod == y.combineMethod) return 0;
+            else if (x.combineMethod == StatCombineMethod.Multiplicative) return 1;
+            else return -1;
+        });
     }
 
     protected virtual void CalculateStats()
@@ -164,7 +209,7 @@ public class Entity : PooledObject
         }
     }
 
-    protected virtual void AbilityTriggers()
+    public virtual void AbilityTriggers()
     {
         foreach (Ability ability in abilities)
         {
@@ -202,16 +247,27 @@ public class Entity : PooledObject
 
     public void DamageTaken(Entity source, DamageInstance damage)
     {
+        if (source == null) source = this;
+        if (owner == null) owner = this;
+        if (source.owner == null) source.owner = source;
+        if (HasIFrames)
+        {
+            damage.damageScale = 0;
+        }
         stats.currentHealth = Mathf.Clamp(stats.currentHealth - damage.damageScale, 0, stats.maxHealth);
         if(damage.damageScale > 0 && !hitTriggeredThisTick)
         {
-            WhenHit.Invoke(source);
+            source.OnHit.Invoke(source, this); // owner does not inherit hits
+            WhenHit.Invoke(this, source.owner);
             hitTriggeredThisTick = true;
         }
         //Debug.Log($"{name} took {damage.damageScale} damage!");
         if(stats.currentHealth <= 0)
         {
-            Die();
+            source.owner.OnKill.Invoke(source.owner, this); // owner inherits kills
+            OnDeath.Invoke(this);
+            if (stats.currentHealth <= 0) // Check if any abilities save you
+                Die();
         }
         else
         {
@@ -245,7 +301,7 @@ public class Entity : PooledObject
         {
             GameManager.Instance.GameOver();
         }
-        owner = null;
+        owner = this;
         ReleaseObject();
     }
 
@@ -256,7 +312,7 @@ public class Entity : PooledObject
         if ((int)stats.expLevelCurve.Evaluate(stats.currentExp) > stats.level)
         {
             stats.level++;
-            OnLevel.Invoke();
+            OnLevel.Invoke(this);
             // ON LEVEL UP STUFF
             GameManager.Instance.CalculateNextExpRequirement();
             GameManager.Instance.abilityTree.gameObject.SetActive(true);

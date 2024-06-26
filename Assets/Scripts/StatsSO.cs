@@ -41,7 +41,7 @@ public class Stats
     //[HideInInspector]
     public int level;
     //[HideInInspector]
-    public int currentExp;
+    public float currentExp;
     //[HideInInspector]
     public float currentHealth;
     public float totalDistanceTraveled;
@@ -61,7 +61,9 @@ public class Stats
     public float movementScaling = 1;
     public float areaScaling = 1;
     public float expAttractScaling = 1;
+    public float expGainScaling = 1;
     public EntityType overrideDamageAllegience;
+    public float distanceMovedWithoutStopping;
 
     public Stats CreateCopy(Stats existing)
     {
@@ -78,6 +80,8 @@ public class Stats
             stats.activationTicks = existing.activationTicks;
             stats.aoes = existing.aoes;
             stats.overrideDamageAllegience = existing.overrideDamageAllegience;
+            stats.distanceMovedWithoutStopping = existing.distanceMovedWithoutStopping;
+            stats.expGainScaling = existing.expGainScaling;
         }
         else
         {
@@ -112,7 +116,7 @@ public class Stats
     }
 }
 
-public enum BuffType { Slow, Stun, Knockback, DoT, Stat }
+public enum BuffType { Slow, Stun, Knockback, DoT, Stat, iFrames }
 public enum StatCombineMethod { Additive, Multiplicative }
 
 [Serializable]

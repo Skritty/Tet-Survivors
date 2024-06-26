@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e146c43f1b4f24b97075511a6fa7e2, type: 3}
+  m_Name: SpawnIncense
+  m_EditorClassIdentifier: 
+  removeFromTreeOnUnlock: 1
+  unlockedOnObtain: []
+  abilityName: Incense
+  abilityDescription: Chance for enemies to drop incense when destroyed, giving you
+    movement speed and regeneration in an area for 20 seconds.
+  resolveOrderModifier: 0
+  temporary: 0
+  enabled: 1
+  activateOnSpawn: 0
+  animationTrigger: 
+  animationDuration: 0
+  cooldownTicks: 0
+  replaceAbility: {fileID: 0}
+  proxy: {fileID: 6059882002246456011, guid: d40e5671d5ed35143bbed08888cdf13d, type: 3}
+  procChance: 0.15
+  removeAfterTicks: 1000

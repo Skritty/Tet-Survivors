@@ -11,6 +11,7 @@ public abstract class Ability : ScriptableObject
     [Header("Ability Info")]
     public string abilityName;
     public string abilityDescription;
+    public int resolveOrderModifier;
     public bool temporary;
     public bool enabled = true;
     public bool activateOnSpawn;
@@ -23,6 +24,7 @@ public abstract class Ability : ScriptableObject
     { 
         if(activateOnSpawn) CooldownActivation(self);
     }
+    public virtual void Cleanup(Entity self) { }
     public virtual void CheckCooldownTrigger(int tick, Entity self)
     {
         if (self.IsStunned) return;

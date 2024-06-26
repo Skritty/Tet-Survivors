@@ -22,7 +22,13 @@ public class InputMovement : Ability
             scale.x = Mathf.Abs(scale.x) * -Mathf.Sign(dir.x);
             self.animator.transform.localScale = scale;
             PlayAnimation(self);
+            self.stats.distanceMovedWithoutStopping += dir.magnitude;
         }
+        else
+        {
+            self.stats.distanceMovedWithoutStopping = 0;
+        }
+        
         self.transform.position += dir;
     }
 }

@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4c679783ee972429e10037f7af6cf2, type: 3}
+  m_Name: Chatterbox
+  m_EditorClassIdentifier: 
+  removeFromTreeOnUnlock: 1
+  unlockedOnObtain: []
+  abilityName: Chatterbox
+  abilityDescription: Your bite attack now happens automatically, is faster, and
+    no longer slows you.
+  resolveOrderModifier: 0
+  temporary: 0
+  enabled: 1
+  activateOnSpawn: 0
+  animationTrigger: Bite
+  animationDuration: 0
+  cooldownTicks: 40
+  replaceAbility: {fileID: 11400000, guid: 84243deb8e6259d40854783fc296be62, type: 2}
+  continuous: 0
+  aoe:
+    stages:
+    - damage:
+        entitiesDamaged: 28
+        damageScale: 1
+        knockbackPower: 0.35
+        knockbackTickDuration: 6
+        stunTickDuration: 0
+        slowMulti: 0
+        slowTickDuration: 0
+      tickDuration: 40
+      timesRepeated: 0
+      radius: 3
+      angleDegrees: 90
+      selfSlowMultiDuringStage: 1
+      VFX: {fileID: 3026967750780675944, guid: 15fc8a07b920d7243b3487b4be29a810, type: 3}
+      SFX: {fileID: 11400000, guid: c1b4ed1299003e449be463405370fea8, type: 2}
+      playingVFX: {fileID: 0}
+    playing: 1

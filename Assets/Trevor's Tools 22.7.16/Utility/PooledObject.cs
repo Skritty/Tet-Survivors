@@ -101,12 +101,12 @@ public class PooledObject : MonoBehaviour
         RemoveObject();
     }
 
-    public GameObject RequestObject()
+    public GameObject RequestObject(bool setActive = true)
     {
         CheckForPool();
         GameObject obj = pools[poolID].Get();
         if (obj == null) return null;
-        obj.SetActive(true);
+        obj.SetActive(setActive);
         obj.GetComponent<PooledObject>().prefab = prefab;
         obj.GetComponent<PooledObject>().valid = true;
         OnGet?.Invoke(obj);
