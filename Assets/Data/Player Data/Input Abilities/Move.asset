@@ -16,10 +16,13 @@ MonoBehaviour:
   unlockedOnObtain: []
   abilityName: Player Move
   abilityDescription: 
+  resolveOrderModifier: 0
+  temporary: 0
   enabled: 1
+  useAdvanceCooldown: 0
   activateOnSpawn: 0
   animationTrigger: Walk
-  animationTickDuration: 0
+  animationDuration: 0
   cooldownTicks: 0
   replaceAbility: {fileID: 0}
   up: 273

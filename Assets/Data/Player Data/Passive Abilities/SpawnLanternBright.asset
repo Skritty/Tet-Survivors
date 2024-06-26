@@ -19,6 +19,7 @@ MonoBehaviour:
   resolveOrderModifier: 0
   temporary: 0
   enabled: 1
+  useAdvanceCooldown: 0
   activateOnSpawn: 1
   animationTrigger: 
   animationDuration: 0

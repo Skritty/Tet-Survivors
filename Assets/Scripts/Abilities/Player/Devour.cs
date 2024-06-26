@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Abilities/Player/Devour")]
 public class Devour : Ability
 {
-    public int lifeGainOnKill;
+    public float lifeGainOnKill;
     public override void Initialize(Entity self)
     {
         self.OnKill.AddListener(GainHealth);

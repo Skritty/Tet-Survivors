@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
-  abilityName: Gain damage per level you have, but gain significantly reduced exp.
-  abilityDescription: 
+  abilityName: Future Sight
+  abilityDescription: Gain damage per level you have, but gain significantly reduced
+    exp.
   resolveOrderModifier: -1
   temporary: 0
   enabled: 1

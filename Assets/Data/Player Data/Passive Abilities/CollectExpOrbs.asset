@@ -15,8 +15,16 @@ MonoBehaviour:
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
   abilityName: Collect Exp Orbs
+  abilityDescription: 
+  resolveOrderModifier: 0
+  temporary: 0
   enabled: 1
+  useAdvanceCooldown: 0
+  activateOnSpawn: 0
+  animationTrigger: 
+  animationDuration: 0
   cooldownTicks: 0
+  replaceAbility: {fileID: 0}
   attractionCurve:
     serializedVersion: 2
     m_Curve:

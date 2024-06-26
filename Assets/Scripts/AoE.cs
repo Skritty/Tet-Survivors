@@ -59,12 +59,14 @@ public class AoE
 
         public void StartFX(Entity origin)
         {
-            if (!playingVFX)
+            if (playingVFX)
             {
-                SFX?.PlayFollowing(origin.transform);
-                playingVFX = VFX?.RequestObject().GetComponent<PooledObject>();
+                playingVFX.ReleaseObject();
+                playingVFX = null;
             }
-            
+            SFX?.PlayFollowing(origin.transform);
+            playingVFX = VFX?.RequestObject().GetComponent<PooledObject>();
+
             if (playingVFX)
             {
                 origin.StartCoroutine(Follow());

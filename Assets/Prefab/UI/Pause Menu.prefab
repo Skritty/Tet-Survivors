@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Isaiah Russell - Game Design + Balance
+  m_text: Isaiah Russell - Game Design + Balance + QA
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 78f7e879694943a4da27e6ffdbcdecc2, type: 2}
   m_sharedMaterial: {fileID: 3058902410146075403, guid: 78f7e879694943a4da27e6ffdbcdecc2, type: 2}
@@ -1020,7 +1020,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Caethan Raley - VFX
+  m_text: Caethan Raley - VFX + UI Art
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 78f7e879694943a4da27e6ffdbcdecc2, type: 2}
   m_sharedMaterial: {fileID: 3058902410146075403, guid: 78f7e879694943a4da27e6ffdbcdecc2, type: 2}
