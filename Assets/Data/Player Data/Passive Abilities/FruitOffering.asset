@@ -15,7 +15,8 @@ MonoBehaviour:
   removeFromTreeOnUnlock: 1
   unlockedOnObtain: []
   abilityName: Fruit Offering
-  abilityDescription: Spirits are destroyed instantly when they hit you.
+  abilityDescription: Spirits take high damage over time when they hit you.
+  resolveOrderModifier: 0
   temporary: 0
   enabled: 1
   activateOnSpawn: 0
@@ -23,3 +24,5 @@ MonoBehaviour:
   animationDuration: 0
   cooldownTicks: 0
   replaceAbility: {fileID: 0}
+  damagePerTick: 0.6
+  tickDuration: 250

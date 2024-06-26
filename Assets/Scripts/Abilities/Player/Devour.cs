@@ -18,6 +18,6 @@ public class Devour : Ability
 
     private void GainHealth(Entity self, Entity other)
     {
-        self.stats.currentHealth += lifeGainOnKill;
+        self.DamageTaken(self, new DamageInstance(-lifeGainOnKill));
     }
 }

@@ -23,7 +23,7 @@ MonoBehaviour:
   <FadeInTime>k__BackingField: 0
   <FadeOutTime>k__BackingField: 0
   <Output>k__BackingField: {fileID: 0}
-  <Loop>k__BackingField: 0
+  <Loop>k__BackingField: 1
   <Priority>k__BackingField: 128
   <Volume>k__BackingField: 0.25
   <Pitch>k__BackingField: 1

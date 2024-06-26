@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Abilities/Player/FruitOffering")]
 public class FruitOffering : Ability
 {
+    public float damagePerTick;
+    public int tickDuration;
     public override void Initialize(Entity self)
     {
         self.WhenHit.AddListener(DestroySpirit);
@@ -18,6 +20,6 @@ public class FruitOffering : Ability
     private void DestroySpirit(Entity self, Entity spirit)
     {
         if (!spirit.stats.allegience.HasFlag(EntityType.Spirit)) return;
-        spirit.DamageTaken(self, new DamageInstance(9999));
+        spirit.stats.buffs.Add(new Buff(BuffType.DoT, tickDuration, damagePerTick, self));
     }
 }
