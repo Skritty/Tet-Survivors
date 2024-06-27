@@ -53,7 +53,7 @@ public class MoveToPlayer : Ability
         {
             self.stats.facing = dir.normalized;
         }
-        dir = dir * self.stats.baseMovementSpeed * self.stats.movementScaling * self.SlowMulti * Time.fixedDeltaTime;
+        dir = dir * self.stats.baseMovementSpeed * self.stats.movementScaling * GameManager.enemySpeedMulti * self.SlowMulti * Time.fixedDeltaTime;
         if (!alwaysFacePlayer && dir.sqrMagnitude != 0)
         {
             self.stats.facing = dir.normalized;
@@ -71,7 +71,7 @@ public class MoveToPlayer : Ability
             PlayAnimation(self);
         }
 
-        self.transform.position += dir + self.Knockback;
+        self.transform.position += dir;
         /*if ((target.transform.position - self.transform.position).magnitude < keepDistance)
         {
             self.transform.position = target.transform.position + -(target.transform.position - self.transform.position).normalized * keepDistance;

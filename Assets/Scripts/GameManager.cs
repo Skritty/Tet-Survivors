@@ -21,10 +21,12 @@ public class GameManager : MonoBehaviour
     private int previousLevelUpExp, nextLevelUpExp;
     public ExpOrb expOrb;
     public AnimationCurve globalEnemyHealthScalingOverTime;
+    public AnimationCurve globalEnemySpeedScalingOverTime;
     public AudioDefinitionSO menuSong, gameSong;
     public Vector2 backgroundOffset;
     public Transform BG1, BG2, BG3, BG4;
     public static float enemyHealthMulti => Instance.globalEnemyHealthScalingOverTime.Evaluate(Instance.globalTick);
+    public static float enemySpeedMulti => Instance.globalEnemySpeedScalingOverTime.Evaluate(Instance.globalTick);
     public List<Entity> entities = new List<Entity>();
     public float spawnRadius;
     public List<Wave> waves = new List<Wave>();

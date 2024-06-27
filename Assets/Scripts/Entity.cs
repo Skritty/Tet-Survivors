@@ -223,6 +223,9 @@ public class Entity : PooledObject
             DamageTaken(this, new DamageInstance(DoT));
         }
 
+        //Knockback
+        transform.position += Knockback;
+
         foreach (Buff buff in stats.buffs.ToArray())
         {
             buff.ticksRemaining--;

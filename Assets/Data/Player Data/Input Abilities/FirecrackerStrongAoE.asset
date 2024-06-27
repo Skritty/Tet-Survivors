@@ -78,7 +78,7 @@ MonoBehaviour:
       playingVFX: {fileID: 0}
     - damage:
         entitiesDamaged: 4
-        damageScale: 0.3
+        damageScale: 0.2
         knockbackPower: 0
         knockbackTickDuration: 0
         stunTickDuration: 0
@@ -94,14 +94,14 @@ MonoBehaviour:
       playingVFX: {fileID: 0}
     - damage:
         entitiesDamaged: 24
-        damageScale: 3
+        damageScale: 4
         knockbackPower: 0
         knockbackTickDuration: 0
         stunTickDuration: 0
         slowMulti: 0
         slowTickDuration: 0
       tickDuration: 5
-      timesRepeated: 1
+      timesRepeated: 0
       radius: 6
       angleDegrees: 360
       selfSlowMultiDuringStage: 1

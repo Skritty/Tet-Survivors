@@ -16,8 +16,10 @@ MonoBehaviour:
   unlockedOnObtain: []
   abilityName: Firecracker
   abilityDescription: 
+  resolveOrderModifier: 0
   temporary: 0
   enabled: 1
+  useAdvanceCooldown: 1
   activateOnSpawn: 1
   animationTrigger: 
   animationDuration: 0
@@ -60,7 +62,7 @@ MonoBehaviour:
       playingVFX: {fileID: 0}
     - damage:
         entitiesDamaged: 4
-        damageScale: 0.3
+        damageScale: 0.2
         knockbackPower: 0
         knockbackTickDuration: 0
         stunTickDuration: 0
