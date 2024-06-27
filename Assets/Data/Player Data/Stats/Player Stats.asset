@@ -57,8 +57,17 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 678
         value: 23
-        inSlope: 0.02960329
-        outSlope: 0.02960329
+        inSlope: 0.010240988
+        outSlope: 0.010240988
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.47434703
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3390
+        value: 50
+        inSlope: 0.009955753
+        outSlope: 0.009955753
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -74,10 +83,14 @@ MonoBehaviour:
     totalDistanceTraveled: 0
     facing: {x: 0, y: 0}
     buffs: []
+    overrideDamageAllegience: 0
+    distanceMovedWithoutStopping: 0
+    advanceCooldown: 0
     maxHealth: 100
+    regeneration: 0
     cooldownReduction: 1
     damageMultiplier: 1
     movementScaling: 1
     areaScaling: 1
     expAttractScaling: 1
-    overrideDamageAllegience: 0
+    expGainScaling: 1
